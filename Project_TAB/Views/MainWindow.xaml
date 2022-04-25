@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="154,95,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="231" Margin="446,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="TransactionsBox"/>
+       
+        <DataGrid Name="TransactionsDatagrid" Margin="0,37,0,0"/>
+        <Label Name="WelcomeLabel"  Content="Witaj, *UserName*" HorizontalAlignment="Left" Margin="19,6,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
     </Grid>
 </Window>

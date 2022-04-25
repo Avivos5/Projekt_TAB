@@ -13,11 +13,15 @@ namespace ProjectTabLib
     public class SqliteDataAccess
     {
 
-        public static List<TransactionModel> LoadTransactions()
+        public static List<TransactionModel> LoadTransactions(int userId)
         {
+            var query = "select * from Transactions where user_id = :userId";
+            var dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("userId", userId);
+
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<TransactionModel>("select * from Transactions", new DynamicParameters());
+                var output = cnn.Query<TransactionModel>(query, dynamicParameters);
                 return output.ToList();
             }
         }

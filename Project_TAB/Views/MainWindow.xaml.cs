@@ -26,24 +26,11 @@ namespace Project_TAB
         public MainWindow()
         {
             InitializeComponent();
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            transactions = SqliteDataAccess.LoadTransactions();
+            WelcomeLabel.Content = $"Witaj, {SqliteLogin.LoggedUserLogin}";
 
-            TransactionsBox.Text = "";
-            TransactionsBox.Text = displayTransactionsNames(transactions);
-        }
-
-        public string displayTransactionsNames(List<TransactionModel> transactions)
-        {
-            var text = string.Empty;
-            foreach (TransactionModel s in transactions)
-            {
-                text += s.Name + "\r\n";
-            }
-            return text;
+            transactions = SqliteDataAccess.LoadTransactions(SqliteLogin.LoggedUserId);
+            TransactionsDatagrid.ItemsSource = transactions;
         }
     }
 }
