@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "y7WHXrjQUqN+pBCavmp4Syl3eyPVp+eA1+CqmIux/CvELuB5asYJKAg1u96TrW9oJC6c9j6jURJIJ+aKgzlJ6A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mati\\Desktop\\Project_TAB\\Backend\\Backend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mati\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Mati\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.115.5\\stub.system.data.sqlite.core.netstandard.1.0.115.5.nupkg.sha512",
+    "C:\\Users\\Mati\\.nuget\\packages\\system.data.sqlite.core\\1.0.115.5\\system.data.sqlite.core.1.0.115.5.nupkg.sha512",
+    "C:\\Users\\Mati\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

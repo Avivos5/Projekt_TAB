@@ -13,3 +13,5 @@ C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Project_TAB.csproj.Gener
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Project_TAB.csproj.CoreCompileInputs.cache
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Project_TAB.exe
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Project_TAB.pdb
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\bin\Debug\DataBase.db
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Project_TAB_Content.g.cs

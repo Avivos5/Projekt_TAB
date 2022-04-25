@@ -1,0 +1,10 @@
+C:\Users\Mati\Desktop\Project_TAB\Backend\bin\Debug\netcoreapp3.1\Backend.deps.json
+C:\Users\Mati\Desktop\Project_TAB\Backend\bin\Debug\netcoreapp3.1\Backend.dll
+C:\Users\Mati\Desktop\Project_TAB\Backend\bin\Debug\netcoreapp3.1\Backend.pdb
+C:\Users\Mati\Desktop\Project_TAB\Backend\obj\Debug\netcoreapp3.1\Backend.csproj.AssemblyReference.cache
+C:\Users\Mati\Desktop\Project_TAB\Backend\obj\Debug\netcoreapp3.1\Backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mati\Desktop\Project_TAB\Backend\obj\Debug\netcoreapp3.1\Backend.AssemblyInfoInputs.cache
+C:\Users\Mati\Desktop\Project_TAB\Backend\obj\Debug\netcoreapp3.1\Backend.AssemblyInfo.cs
+C:\Users\Mati\Desktop\Project_TAB\Backend\obj\Debug\netcoreapp3.1\Backend.csproj.CoreCompileInputs.cache
+C:\Users\Mati\Desktop\Project_TAB\Backend\obj\Debug\netcoreapp3.1\Backend.dll
+C:\Users\Mati\Desktop\Project_TAB\Backend\obj\Debug\netcoreapp3.1\Backend.pdb
