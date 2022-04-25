@@ -2,7 +2,11 @@ using System;
 
 namespace Backend
 {
-    public class Class1
+    public static class Class1
     {
+        public static void LoadPeople()
+        {
+            
+        }
     }
 }

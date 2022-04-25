@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectTabLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,29 @@ namespace Project_TAB
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<TransactionModel> transactions = new List<TransactionModel>();
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            transactions = SqliteDataAccess.LoadTransactions();
+
+            TransactionsBox.Text = "";
+            TransactionsBox.Text = displayTransactionsNames(transactions);
+        }
+
+        public string displayTransactionsNames(List<TransactionModel> transactions)
+        {
+            var text = string.Empty;
+            foreach (TransactionModel s in transactions)
+            {
+                text += s.Name + "\r\n";
+            }
+            return text;
         }
     }
 }
