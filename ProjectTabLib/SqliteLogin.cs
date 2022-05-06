@@ -25,7 +25,7 @@ namespace ProjectTabLib
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<UserModel>(query, dynamicParameters).FirstOrDefault(); ;
+                var output = cnn.Query<UserModel>(query, dynamicParameters).FirstOrDefault();
 
                 if(output != null)
                 {

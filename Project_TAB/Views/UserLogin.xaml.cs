@@ -50,5 +50,13 @@ namespace Project_TAB.Views
             mainWindow.Show();
         }
 
+
+        private void Go_Register_Click(object sender, RoutedEventArgs e)
+        {
+            UserRegister registerWindow = new UserRegister();
+            registerWindow.Show();
+            Close();
+        }
+
     }
 }

@@ -24,3 +24,5 @@ C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\MainWindow.g.cs
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\MainWindow.baml
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\UserLogin.g.cs
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\UserLogin.baml
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\UserRegister.g.cs
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\UserRegister.baml
