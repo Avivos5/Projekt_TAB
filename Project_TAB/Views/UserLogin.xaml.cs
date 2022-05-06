@@ -38,7 +38,7 @@ namespace Project_TAB.Views
             }
             else
             {
-                MessageBox.Show("Wrong Login or Password");
+                MessageBox.Show("Złe login lub hasło.");
             }
 
             

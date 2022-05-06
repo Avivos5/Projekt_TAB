@@ -7,22 +7,26 @@
         mc:Ignorable="d"
         Title="UserRegister" Height="488.494" Width="425.941">
     <Grid>
-        <Label Content="Rejestracja" HorizontalAlignment="Left" Margin="154,48,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Rejestracja" HorizontalAlignment="Left" Margin="154,48,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Grid.ColumnSpan="2"/>
 
 
         <Label Content="Login" HorizontalAlignment="Left" Margin="146,106,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="146,132,0,0" Name="LoginInput"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="146,132,0,0" Name="LoginInput" Grid.ColumnSpan="2"/>
 
         <Label Content="Hasło" HorizontalAlignment="Left" Margin="146,176,0,0" VerticalAlignment="Top"/>
-        <PasswordBox HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="120" Margin="146,202,0,0" Name="PassowordInput"/>
+        <PasswordBox HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="120" Margin="146,202,0,0" Name="PassowordInput" Grid.ColumnSpan="2"/>
 
 
-        <Label Content="Powtórz Hasło" HorizontalAlignment="Left" Margin="146,250,0,0" VerticalAlignment="Top"/>
-        <PasswordBox HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="120" Margin="146,276,0,0" x:Name="PassowordInput_Copy"/>
+        <Label Content="Powtórz Hasło" HorizontalAlignment="Left" Margin="146,250,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <PasswordBox HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="120" Margin="146,276,0,0" x:Name="RepeatPassowordInput" Grid.ColumnSpan="2"/>
 
-        <Button Content="Stwórz konto" HorizontalAlignment="Left" Margin="158,337,0,0" VerticalAlignment="Top" Width="97" Click="Register_Click"/>
+        <Button Content="Stwórz konto" HorizontalAlignment="Left" Margin="158,337,0,0" VerticalAlignment="Top" Width="97" Click="Register_Click" Grid.ColumnSpan="2"/>
 
-        <Label Content="Masz już konto?" HorizontalAlignment="Left" Margin="111,380,0,0" VerticalAlignment="Top"/>
-        <Button Content="Zaloguj się" Click="Go_Login_Click" HorizontalAlignment="Left" Margin="211,381,0,0" VerticalAlignment="Top" Width="87" Padding="3"/>
+        <Label Content="Masz już konto?" HorizontalAlignment="Left" Margin="111,380,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button Content="Zaloguj się" Click="Go_Login_Click" HorizontalAlignment="Left" Margin="21.16,381,0,0" VerticalAlignment="Top" Width="87" Padding="3" Grid.Column="1"/>
     </Grid>
 </Window>
