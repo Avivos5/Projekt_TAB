@@ -54,6 +54,7 @@
     <Compile Include="SqliteDataAccess.cs" />
     <Compile Include="SqliteLogin.cs" />
     <Compile Include="TransactionModel.cs" />
+    <Compile Include="UserCategory.cs" />
     <Compile Include="UserModel.cs" />
   </ItemGroup>
   <ItemGroup>

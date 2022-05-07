@@ -7,8 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-       
-        <DataGrid Name="TransactionsDatagrid" Margin="0,37,0,0"/>
+
+        <DataGrid x:Name="TransactionsDatagrid" CanUserAddRows="False" Margin="0,37,0,0" AutoGenerateColumns ="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding Path=DateTime}" />
+                <DataGridTextColumn Header="CategoryID" Binding="{Binding Path=Category_Name}" />
+                <DataGridTextColumn Header="AccountID" Binding="{Binding Path=Account_Id}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" />
+                <DataGridTextColumn Header="TransactionAmount" Binding="{Binding Path=Transaction_Amount}" />
+                <DataGridTextColumn Header="Income" Binding="{Binding Path=Income}" />
+                <DataGridTextColumn Header="CurrentAmount" Binding="{Binding Path=Current_Amount}" />
+                
+                
+            </DataGrid.Columns>
+        </DataGrid>
         <Label Name="WelcomeLabel"  Content="Witaj, *UserName*" HorizontalAlignment="Left" Margin="19,6,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
     </Grid>

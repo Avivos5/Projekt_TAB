@@ -22,7 +22,7 @@ namespace Project_TAB
     public partial class MainWindow : Window
     {
         List<TransactionModel> transactions = new List<TransactionModel>();
-
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +30,9 @@ namespace Project_TAB
             WelcomeLabel.Content = $"Witaj, {SqliteLogin.LoggedUserLogin}";
 
             transactions = SqliteDataAccess.LoadTransactions(SqliteLogin.LoggedUserId);
+
+            
+            
             TransactionsDatagrid.ItemsSource = transactions;
         }
     }

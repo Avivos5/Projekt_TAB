@@ -46,6 +46,7 @@ namespace Project_TAB.Views
 
         public void GrantAccess()
         {
+          
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
