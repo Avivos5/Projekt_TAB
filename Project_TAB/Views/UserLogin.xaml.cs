@@ -38,7 +38,7 @@ namespace Project_TAB.Views
             }
             else
             {
-                MessageBox.Show("Wrong Login or Password");
+                MessageBox.Show("Złe login lub hasło.");
             }
 
             
@@ -49,6 +49,14 @@ namespace Project_TAB.Views
           
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+        }
+
+
+        private void Go_Register_Click(object sender, RoutedEventArgs e)
+        {
+            UserRegister registerWindow = new UserRegister();
+            registerWindow.Show();
+            Close();
         }
 
     }

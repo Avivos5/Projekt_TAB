@@ -24,6 +24,7 @@ C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\MainWindow.g.cs
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\MainWindow.baml
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\UserLogin.g.cs
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\UserLogin.baml
+<<<<<<< HEAD
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\bin\Debug\DataBase.db
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\bin\Debug\Project_TAB.exe.config
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\bin\Debug\Project_TAB.exe
@@ -50,3 +51,7 @@ C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.csproj.Core
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.csproj.CopyComplete
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Project_TAB.exe
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Project_TAB.pdb
+=======
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\UserRegister.g.cs
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\UserRegister.baml
+>>>>>>> 613777a44a53bc09d7bed18cc005ae0a947ecac6

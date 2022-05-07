@@ -10,32 +10,38 @@ using System.Threading.Tasks;
 
 namespace ProjectTabLib
 {
-    public class SqliteLogin
+    public class SqliteRegistration
     {
-
         public static int LoggedUserId;
         public static string LoggedUserLogin;
 
-        public static bool CheckUserLogin(string login, string password)
+        public static int RegisterUser(string login, string password)
         {
-            var query = "SELECT * from Users WHERE login = :login AND password = :password";
+
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var affectedRows = cnn.Execute("INSERT INTO Users (login, password) VALUES (@Login, @Password)", new {Login = login, Password = password});
+                return affectedRows;
+            }
+        }
+
+        public static bool CheckIfExist(string login)
+        {
+            var query = "SELECT * from Users WHERE login = :login";
             var dynamicParameters = new DynamicParameters();
             dynamicParameters.Add("login", login);
-            dynamicParameters.Add("password", password);
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 var output = cnn.Query<UserModel>(query, dynamicParameters).FirstOrDefault();
 
-                if(output != null)
+                if (output == null)
                 {
-                    LoggedUserId = output.Id;
-                    LoggedUserLogin = output.Login;
-                    return true;
+                    return false;
                 }
                 else
                 {
-                    return false;
+                    return true;
                 }
             }
         }

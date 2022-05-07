@@ -18,5 +18,9 @@
 
 
         <Button Content="Zaloguj" HorizontalAlignment="Left" Margin="168,309,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
+        <Label Content="Nie masz konta?" HorizontalAlignment="Left" Margin="106,359,0,0" VerticalAlignment="Top"/>
+        <Button Content="Zarejestruj się" Click="Go_Register_Click" HorizontalAlignment="Left" Margin="208,360,0,0" VerticalAlignment="Top" Width="108" Padding="3"/>
+
     </Grid>
 </Window>
