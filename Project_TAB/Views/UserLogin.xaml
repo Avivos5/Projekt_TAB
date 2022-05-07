@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_TAB.Views"
         mc:Ignorable="d"
-        Title="UserLogin" Height="488.494" Width="425.941">
+        Title="UserLogin" 
+        Height="488.494" 
+        Width="425.941"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Logowanie" HorizontalAlignment="Left" Margin="154,48,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
 

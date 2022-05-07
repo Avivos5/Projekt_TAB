@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_TAB.Views"
         mc:Ignorable="d"
-        Title="UserRegister" Height="488.494" Width="425.941">
+        Title="UserRegister" 
+        Height="488.494" 
+        Width="425.941"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
