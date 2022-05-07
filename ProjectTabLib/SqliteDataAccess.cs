@@ -13,16 +13,18 @@ namespace ProjectTabLib
     public class SqliteDataAccess
     {
 
-        public static List<TransactionModel> LoadTransactions(int userId)
+        public static List<TransactionDatagridModel > LoadTransactions(int userId)
         {
-            var query = "select * from Transactions where user_id = :userId";
-            var query2 = "select name from User_Categories where user_id = :userId";
-            var dynamicParameters = new DynamicParameters();
-            dynamicParameters.Add("userId", userId);
+            //var dynamicParameters = new DynamicParameters();
+            //dynamicParameters.Add("userId", userId);
+            //var query = "select Transactions.*, User_Categories.name as Category_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id where Transactions.user_id = :userId";
+            
+            
+            
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<TransactionModel>(query, dynamicParameters);
+                var output = cnn.Query<TransactionDatagridModel>(@"select Transactions.*, User_Categories.name as Category_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id where Transactions.user_id = @UserId", new {UserId = userId});
                
                 return output.ToList();
             }

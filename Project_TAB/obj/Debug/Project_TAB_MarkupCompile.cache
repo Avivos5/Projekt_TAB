@@ -4,26 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\
 Project_TAB
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\App.xaml
-21380866260
-1-1184264833
-6527634043
-151690718258
-Views\MainWindow.xaml;Views\UserLogin.xaml;
-=======
-C:\Users\Mati\Desktop\Project_TAB\Project_TAB\App.xaml
-3-2028562426
-1-1184264833
-788117449
-151081703797
+D:\ProjektTAB\Projekt_TAB\Project_TAB\App.xaml
+31133852477
+1455972417
+7-1912332991
+151550338019
 Views\MainWindow.xaml;Views\UserLogin.xaml;Views\UserRegister.xaml;
->>>>>>> 613777a44a53bc09d7bed18cc005ae0a947ecac6
 
 False
 

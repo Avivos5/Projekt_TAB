@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectTabLib
 {
-    class UserCategory
+    public class UserCategoryModel
     {
         public int Id { get; set; }
         public int User_id { get; set; }
