@@ -31,7 +31,7 @@ namespace ProjectTabLib
                 };
 
 
-                string sql = @"select Transactions.*, User_Categories.name as Category_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id where Transactions.user_id = @UserId;";
+                string sql = @"select Transactions.*, User_Categories.name as Category_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id where Transactions.user_id = @UserId;";
                 var output = cnn.Query<TransactionDatagridModel>(sql, p);
                
                 return output.ToList();
