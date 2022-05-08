@@ -24,7 +24,15 @@ namespace ProjectTabLib
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<TransactionDatagridModel>(@"select Transactions.*, User_Categories.name as Category_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id where Transactions.user_id = @UserId", new {UserId = userId});
+
+                var p = new
+                {
+                    UserId = userId
+                };
+
+
+                string sql = @"select Transactions.*, User_Categories.name as Category_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id where Transactions.user_id = @UserId;";
+                var output = cnn.Query<TransactionDatagridModel>(sql, p);
                
                 return output.ToList();
             }
