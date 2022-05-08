@@ -20,3 +20,14 @@ C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.C
 C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.CopyComplete
 C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.dll
 C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.pdb
+D:\ProjektTAB\Projekt_TAB\ProjectTabLib\bin\Debug\ProjectTabLib.dll
+D:\ProjektTAB\Projekt_TAB\ProjectTabLib\bin\Debug\ProjectTabLib.pdb
+D:\ProjektTAB\Projekt_TAB\ProjectTabLib\bin\Debug\Dapper.dll
+D:\ProjektTAB\Projekt_TAB\ProjectTabLib\bin\Debug\System.Data.SQLite.dll
+D:\ProjektTAB\Projekt_TAB\ProjectTabLib\bin\Debug\Dapper.xml
+D:\ProjektTAB\Projekt_TAB\ProjectTabLib\bin\Debug\System.Data.SQLite.xml
+D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.AssemblyReference.cache
+D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.CoreCompileInputs.cache
+D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.CopyComplete
+D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.dll
+D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.pdb

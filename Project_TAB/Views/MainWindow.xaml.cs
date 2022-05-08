@@ -21,7 +21,7 @@ namespace Project_TAB
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<TransactionModel> transactions = new List<TransactionModel>();
+        List<TransactionDatagridModel> transactions = new List<TransactionDatagridModel>();
         
         public MainWindow()
         {

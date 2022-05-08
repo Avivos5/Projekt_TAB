@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace ProjectTabLib
 {
-    public class TransactionModel
+    public class TransactionDatagridModel
     {
         public int Id { get; set; }
         public int User_Id { get; set; }
@@ -16,7 +17,8 @@ namespace ProjectTabLib
         public double Transaction_Amount { get; set; }
         public bool Income { get; set; }
         public double Current_Amount { get; set; }
-        
 
+        //public int Status { get; set; }
+        public string Category_Name { get; set; }
     }
 }
