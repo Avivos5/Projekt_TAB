@@ -48,5 +48,14 @@ namespace Project_TAB.Views
             TransactionsDatagrid.ItemsSource = transactions;
 
         }
+
+
+        public void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            
+           int transactionId = ((TransactionDatagridModel)TransactionsDatagrid.SelectedItem).Id;
+            MessageBox.Show(SqliteDataAccess.DeleteTransaction(new TransactionDatagridModel() { Id = transactionId }).ToString() + "row affected");
+            refreshTransactionsTable();
+        }
     }
 }

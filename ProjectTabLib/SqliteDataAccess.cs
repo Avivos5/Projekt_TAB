@@ -44,7 +44,14 @@ namespace ProjectTabLib
                 return output.ToList();
             }
         }
+        public static void addTransaction(Object newTransaction)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var affectedRows = cnn.Execute("INSERT INTO Transactions (user_id, category_id, account_id, datetime, name, transaction_amount, income, current_amount) VALUES (@User_Id, @Category_Id, @Account_Id, @DateTime, @Name, @Transaction_Amount, @Income, @Current_Amount)", newTransaction);
 
+            }
+        }
         public static List<UserAccountModel> getUserAccounts(int userId)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -61,18 +68,22 @@ namespace ProjectTabLib
             }
         }
 
-        public static void addTransaction(Object newTransaction)
+        public static int DeleteTransaction(TransactionDatagridModel transactionRow)
         {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                var affectedRows = cnn.Execute("INSERT INTO Transactions (user_id, category_id, account_id, datetime, name, transaction_amount, income, current_amount) VALUES (@User_Id, @Category_Id, @Account_Id, @DateTime, @Name, @Transaction_Amount, @Income, @Current_Amount)", newTransaction);
 
+                var affectedRows = connection.Execute("Delete from Transactions Where Id = @Id", new { Id=transactionRow.Id });
+                return affectedRows;
             }
         }
+
 
         private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
+
+       
     }
 }
