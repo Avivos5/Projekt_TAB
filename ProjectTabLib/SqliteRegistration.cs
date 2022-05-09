@@ -12,9 +12,6 @@ namespace ProjectTabLib
 {
     public class SqliteRegistration
     {
-        public static int LoggedUserId;
-        public static string LoggedUserLogin;
-
         public static int RegisterUser(string login, string password)
         {
 

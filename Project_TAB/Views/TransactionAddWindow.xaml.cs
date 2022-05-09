@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace Project_TAB.Views
 {
@@ -33,25 +35,49 @@ namespace Project_TAB.Views
 
         private void AddTransactionButton_Click(object sender, RoutedEventArgs e)
         {
+            NumberFormatInfo provider = new NumberFormatInfo();
+            provider.NumberDecimalSeparator = ".";
 
-            var newTransaction = new
+            if (CategoriesComboBox.SelectedValue == null || AccountsComboBox.SelectedValue == null || TransactionDatePicker.SelectedDate == null || NameInput.Text.Length == 0 || AmountInput.Text.Length == 0)
             {
-               User_Id = SqliteLogin.LoggedUserId,
-               Category_Id = int.Parse(CategoriesComboBox.SelectedValue.ToString()),
-               Account_Id = int.Parse(AccountsComboBox.SelectedValue.ToString()),
-               DateTime = TransactionDatePicker.SelectedDate.Value.ToShortDateString(),
-               Name = NameInput.Text,
-               Transaction_Amount = Convert.ToDouble(AmountInput.Text),
-               Income = IncomeCheckBox.IsChecked == true ? true : false,
-               Current_Amount = 0 // To jest do zmiany!!!!
+                MessageBox.Show("Uzupełnij wszystkie pola.");
+            }
+            else
+            {
+                var newTransaction = new
+                {
+                    User_Id = SqliteLogin.LoggedUserId,
+                    Category_Id = int.Parse(CategoriesComboBox.SelectedValue.ToString()),
+                    Account_Id = int.Parse(AccountsComboBox.SelectedValue.ToString()),
+                    DateTime = TransactionDatePicker.SelectedDate.Value.ToShortDateString(),
+                    Name = NameInput.Text,
+                    Transaction_Amount = Convert.ToDouble(AmountInput.Text, provider),
+                    Income = IncomeCheckBox.IsChecked == true ? true : false,
+                    Current_Amount = 0 // To jest do zmiany!!!!
 
-            };
+                };
+                SqliteDataAccess.addTransaction(newTransaction);
 
-            SqliteDataAccess.addTransaction(newTransaction);
+                GoBackToMainWindow();
+                Close();
+            }
+        }
 
+        private void TransactionAddWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            GoBackToMainWindow();
+        }
+
+        private void GoBackToMainWindow()
+        {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            Close();
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9.]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

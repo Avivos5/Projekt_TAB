@@ -31,11 +31,19 @@
             </DataGrid.RowStyle>
 
             <DataGrid.Columns>
+<<<<<<< HEAD
                 <DataGridTextColumn Binding="{Binding Path=DateTime}" Header="Date" />
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" />
                 <DataGridTextColumn Binding="{Binding Path=Category_Name}" Header="CategoryName" />
                 <DataGridTextColumn Binding="{Binding Path=Transaction_Amount}" Header="TransactionAmount" />
                 <DataGridTextColumn Binding="{Binding Path=Id}" Header="IdTransakcji" />
+=======
+                <DataGridTextColumn Binding="{Binding Path=DateTime}" Header="Data" />
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Nazwa" />
+                <DataGridTextColumn Binding="{Binding Path=Category_Name}" Header="Kategoria" />
+                <DataGridTextColumn Binding="{Binding Path=Account_Name}" Header="Konto" />
+                <DataGridTextColumn Binding="{Binding Path=Transaction_Amount}" Header="Wartość transakcji" />
+>>>>>>> 7dbf3282b172184c7dad43df491c4a69b8e2febd
 
                 <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate >
@@ -60,6 +68,15 @@
             VerticalAlignment="Top"
             Click="AddButton_Click"
             Content="Dodaj" />
+
+
+        <Button
+            Width="75"
+            Margin="707,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="LogoutButton_Click"
+            Content="Wyloguj" />
 
     </Grid>
 </Window>
