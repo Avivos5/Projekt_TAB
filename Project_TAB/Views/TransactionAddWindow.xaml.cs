@@ -34,23 +34,29 @@ namespace Project_TAB.Views
         private void AddTransactionButton_Click(object sender, RoutedEventArgs e)
         {
 
-            var newTransaction = new
+            if (CategoriesComboBox.SelectedValue == null || AccountsComboBox.SelectedValue == null || TransactionDatePicker.SelectedDate == null || NameInput.Text.Length == 0 || AmountInput.Text.Length == 0)
             {
-               User_Id = SqliteLogin.LoggedUserId,
-               Category_Id = int.Parse(CategoriesComboBox.SelectedValue.ToString()),
-               Account_Id = int.Parse(AccountsComboBox.SelectedValue.ToString()),
-               DateTime = TransactionDatePicker.SelectedDate.Value.ToShortDateString(),
-               Name = NameInput.Text,
-               Transaction_Amount = Convert.ToDouble(AmountInput.Text),
-               Income = IncomeCheckBox.IsChecked == true ? true : false,
-               Current_Amount = 0 // To jest do zmiany!!!!
+                MessageBox.Show("Uzupełnij wszystkie pola.");
+            }
+            else
+            {
+                var newTransaction = new
+                {
+                    User_Id = SqliteLogin.LoggedUserId,
+                    Category_Id = int.Parse(CategoriesComboBox.SelectedValue.ToString()),
+                    Account_Id = int.Parse(AccountsComboBox.SelectedValue.ToString()),
+                    DateTime = TransactionDatePicker.SelectedDate.Value.ToShortDateString(),
+                    Name = NameInput.Text,
+                    Transaction_Amount = Convert.ToDouble(AmountInput.Text),
+                    Income = IncomeCheckBox.IsChecked == true ? true : false,
+                    Current_Amount = 0 // To jest do zmiany!!!!
 
-            };
+                };
+                SqliteDataAccess.addTransaction(newTransaction);
 
-            SqliteDataAccess.addTransaction(newTransaction);
-
-            GoBackToMainWindow();
-            Close();
+                GoBackToMainWindow();
+                Close();
+            }
         }
 
         private void TransactionAddWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
