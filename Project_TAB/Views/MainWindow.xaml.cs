@@ -46,5 +46,14 @@ namespace Project_TAB.Views
             transactions = SqliteDataAccess.LoadTransactions(SqliteLogin.LoggedUserId);
             TransactionsDatagrid.ItemsSource = transactions;
         }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            SqliteLogin.LoggedUserId = 0;
+            SqliteLogin.LoggedUserLogin = null;
+            UserLogin loginWindow = new UserLogin();
+            loginWindow.Show();
+            Close();
+        }
     }
 }

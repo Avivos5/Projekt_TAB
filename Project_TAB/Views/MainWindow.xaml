@@ -42,5 +42,14 @@
             Click="AddButton_Click"
             Content="Dodaj" />
 
+
+        <Button
+            Width="75"
+            Margin="707,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="LogoutButton_Click"
+            Content="Wyloguj" />
+
     </Grid>
 </Window>
