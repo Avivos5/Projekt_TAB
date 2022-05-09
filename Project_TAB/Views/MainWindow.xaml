@@ -21,30 +21,21 @@
                 <Style TargetType="DataGridRow">
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Income}" Value="false">
-                            <Setter Property="Background" Value="Red"></Setter>
+                            <Setter Property="Background" Value="#f7bbb7"></Setter>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding Income}" Value="true">
-                            <Setter Property="Background" Value="Green"></Setter>
+                            <Setter Property="Background" Value="#bdf7b7"></Setter>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </DataGrid.RowStyle>
 
             <DataGrid.Columns>
-<<<<<<< HEAD
-                <DataGridTextColumn Binding="{Binding Path=DateTime}" Header="Date" />
-                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" />
-                <DataGridTextColumn Binding="{Binding Path=Category_Name}" Header="CategoryName" />
-                <DataGridTextColumn Binding="{Binding Path=Transaction_Amount}" Header="TransactionAmount" />
-                <DataGridTextColumn Binding="{Binding Path=Id}" Header="IdTransakcji" />
-=======
                 <DataGridTextColumn Binding="{Binding Path=DateTime}" Header="Data" />
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Nazwa" />
                 <DataGridTextColumn Binding="{Binding Path=Category_Name}" Header="Kategoria" />
                 <DataGridTextColumn Binding="{Binding Path=Account_Name}" Header="Konto" />
                 <DataGridTextColumn Binding="{Binding Path=Transaction_Amount}" Header="Wartość transakcji" />
->>>>>>> 7dbf3282b172184c7dad43df491c4a69b8e2febd
-
                 <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate >
                         <DataTemplate>

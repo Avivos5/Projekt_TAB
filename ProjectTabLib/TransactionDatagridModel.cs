@@ -18,12 +18,7 @@ namespace ProjectTabLib
         public bool Income { get; set; }
         public double Current_Amount { get; set; }
         public string Category_Name { get; set; }
-<<<<<<< HEAD
-
         public string ColorSet { get; set; }
-
-=======
         public string Account_Name { get; set; }
->>>>>>> 7dbf3282b172184c7dad43df491c4a69b8e2febd
     }
 }
