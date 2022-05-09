@@ -65,7 +65,6 @@ namespace Project_TAB.Views
         private void GoToLoginPage()
         {
             UserLogin loginWindow = new UserLogin();
-            //loginWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             loginWindow.Show();
             Close();
         }

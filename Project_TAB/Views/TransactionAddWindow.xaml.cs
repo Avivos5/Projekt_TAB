@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectTabLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,38 @@ namespace Project_TAB.Views
     /// </summary>
     public partial class TransactionAddWindow : Window
     {
+        public List<UserCategoryModel> userCategories { get; set; }
+        public List<UserAccountModel> userAccounts { get; set; }
         public TransactionAddWindow()
         {
             InitializeComponent();
+            DataContext = this;
+
+            userAccounts = SqliteDataAccess.getUserAccounts(SqliteLogin.LoggedUserId);
+            userCategories = SqliteDataAccess.getUserCategories(SqliteLogin.LoggedUserId);
+        }
+
+        private void AddTransactionButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            var newTransaction = new
+            {
+               User_Id = SqliteLogin.LoggedUserId,
+               Category_Id = int.Parse(CategoriesComboBox.SelectedValue.ToString()),
+               Account_Id = int.Parse(AccountsComboBox.SelectedValue.ToString()),
+               DateTime = TransactionDatePicker.SelectedDate.Value.ToShortDateString(),
+               Name = NameInput.Text,
+               Transaction_Amount = Convert.ToDouble(AmountInput.Text),
+               Income = IncomeCheckBox.IsChecked == true ? true : false,
+               Current_Amount = 0 // To jest do zmiany!!!!
+
+            };
+
+            SqliteDataAccess.addTransaction(newTransaction);
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
         }
     }
 }

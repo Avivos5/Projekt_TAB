@@ -1,15 +1,108 @@
-﻿<Window x:Class="Project_TAB.Views.TransactionAddWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Project_TAB.Views"
-        mc:Ignorable="d"
-        Title="TransactionAddWindow" 
-        Height="488.494" 
-        Width="425.941"
-        WindowStartupLocation="CenterScreen">
+﻿<Window
+    x:Class="Project_TAB.Views.TransactionAddWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Project_TAB.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="TransactionAddWindow"
+    Width="425.941"
+    Height="546.396"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
     <Grid>
-        
+        <Label
+            Margin="109,22,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Dodawanie Transakcji"
+            FontSize="18"
+            FontWeight="Bold" />
+
+        <Label
+            Margin="146,61,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Nazwa" />
+        <TextBox
+            Name="NameInput"
+            Width="120"
+            Height="23"
+            Margin="146,87,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+
+        <Label
+            Margin="146,119,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Kwota" />
+        <TextBox
+            Name="AmountInput"
+            Width="120"
+            Height="23"
+            Margin="146,145,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+
+        <Label
+            Margin="146,179,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Data" />
+        <DatePicker
+            Name="TransactionDatePicker"
+            Width="120"
+            Margin="146,205,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+
+        <Label
+            Margin="146,244,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Konto" />
+        <ComboBox
+            Name="AccountsComboBox"
+            Width="120"
+            Margin="146,270,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="Account_Name"
+            ItemsSource="{Binding userAccounts}"
+            SelectedValuePath="Id" />
+
+        <Label
+            Margin="146,309,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Kategoria" />
+        <ComboBox
+            Name="CategoriesComboBox"
+            Width="120"
+            Margin="146,335,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="Category_Name"
+            ItemsSource="{Binding userCategories}"
+            SelectedValuePath="Id" />
+
+        <CheckBox
+            Name="IncomeCheckBox"
+            Margin="153,380,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Wpływ na konto" />
+
+        <Button
+            Width="75"
+            Margin="166,424,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="AddTransactionButton_Click"
+            Content="Dodaj" />
+
+
     </Grid>
 </Window>

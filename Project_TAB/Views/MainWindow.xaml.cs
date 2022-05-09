@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project_TAB
+namespace Project_TAB.Views
 {
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
@@ -29,10 +29,21 @@ namespace Project_TAB
 
             WelcomeLabel.Content = $"Witaj, {SqliteLogin.LoggedUserLogin}";
 
-            transactions = SqliteDataAccess.LoadTransactions(SqliteLogin.LoggedUserId);
+            refreshTransactionsTable();
+            
+        }
 
-            
-            
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            TransactionAddWindow transactionAdd = new TransactionAddWindow();
+            transactionAdd.Show();
+            Close();
+        }
+
+
+        public void refreshTransactionsTable()
+        {
+            transactions = SqliteDataAccess.LoadTransactions(SqliteLogin.LoggedUserId);
             TransactionsDatagrid.ItemsSource = transactions;
         }
     }
