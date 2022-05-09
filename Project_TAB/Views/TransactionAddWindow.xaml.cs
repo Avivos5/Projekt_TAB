@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace Project_TAB.Views
 {
@@ -33,6 +35,8 @@ namespace Project_TAB.Views
 
         private void AddTransactionButton_Click(object sender, RoutedEventArgs e)
         {
+            NumberFormatInfo provider = new NumberFormatInfo();
+            provider.NumberDecimalSeparator = ".";
 
             if (CategoriesComboBox.SelectedValue == null || AccountsComboBox.SelectedValue == null || TransactionDatePicker.SelectedDate == null || NameInput.Text.Length == 0 || AmountInput.Text.Length == 0)
             {
@@ -47,7 +51,7 @@ namespace Project_TAB.Views
                     Account_Id = int.Parse(AccountsComboBox.SelectedValue.ToString()),
                     DateTime = TransactionDatePicker.SelectedDate.Value.ToShortDateString(),
                     Name = NameInput.Text,
-                    Transaction_Amount = Convert.ToDouble(AmountInput.Text),
+                    Transaction_Amount = Convert.ToDouble(AmountInput.Text, provider),
                     Income = IncomeCheckBox.IsChecked == true ? true : false,
                     Current_Amount = 0 // To jest do zmiany!!!!
 
@@ -68,6 +72,12 @@ namespace Project_TAB.Views
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9.]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

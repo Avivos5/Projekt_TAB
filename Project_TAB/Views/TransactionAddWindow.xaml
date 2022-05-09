@@ -8,10 +8,9 @@
     Title="TransactionAddWindow"
     Width="425.941"
     Height="546.396"
-    WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d"
     Closing="TransactionAddWindow_Closing"
-    >
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
     <Grid>
         <Label
             Margin="109,22,0,0"
@@ -46,7 +45,8 @@
             Height="23"
             Margin="146,145,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            PreviewTextInput="NumberValidationTextBox" />
 
         <Label
             Margin="146,179,0,0"
