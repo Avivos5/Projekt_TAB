@@ -49,9 +49,19 @@ namespace Project_TAB.Views
 
             SqliteDataAccess.addTransaction(newTransaction);
 
+            GoBackToMainWindow();
+            Close();
+        }
+
+        private void TransactionAddWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            GoBackToMainWindow();
+        }
+
+        private void GoBackToMainWindow()
+        {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            Close();
         }
     }
 }

@@ -9,7 +9,9 @@
     Width="425.941"
     Height="546.396"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Closing="TransactionAddWindow_Closing"
+    >
     <Grid>
         <Label
             Margin="109,22,0,0"
