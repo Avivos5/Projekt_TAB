@@ -17,6 +17,19 @@
             Margin="0,37,0,0"
             AutoGenerateColumns="False"
             CanUserAddRows="False">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Income}" Value="false">
+                            <Setter Property="Background" Value="Red"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Income}" Value="true">
+                            <Setter Property="Background" Value="Green"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=DateTime}" Header="Date" />
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" />

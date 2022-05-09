@@ -44,7 +44,9 @@ namespace Project_TAB.Views
         public void refreshTransactionsTable()
         {
             transactions = SqliteDataAccess.LoadTransactions(SqliteLogin.LoggedUserId);
+           
             TransactionsDatagrid.ItemsSource = transactions;
+
         }
     }
 }

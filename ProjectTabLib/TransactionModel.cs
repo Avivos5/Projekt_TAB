@@ -16,7 +16,7 @@ namespace ProjectTabLib
         public double Transaction_Amount { get; set; }
         public bool Income { get; set; }
         public double Current_Amount { get; set; }
-        
+
 
     }
 }
