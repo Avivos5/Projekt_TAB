@@ -78,6 +78,21 @@ namespace ProjectTabLib
             }
         }
 
+        public static List<TransactionDatagridModel> SelectTransactionById(TransactionDatagridModel transactionRow)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    Id = transactionRow.Id
+                };
+
+                string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where Transactions.id = @Id";
+                var output = cnn.Query<TransactionDatagridModel>(sql, p);
+
+                return output.ToList();
+            }
+        }
 
         private static string LoadConnectionString(string id = "Default")
         {

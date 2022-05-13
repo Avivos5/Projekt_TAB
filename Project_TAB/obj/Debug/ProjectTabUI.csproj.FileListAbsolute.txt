@@ -59,3 +59,5 @@ D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.csproj.CoreCompileI
 D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.csproj.CopyComplete
 D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Project_TAB.exe
 D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Project_TAB.pdb
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\TransactionEditWindow.g.cs
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\TransactionEditWindow.baml

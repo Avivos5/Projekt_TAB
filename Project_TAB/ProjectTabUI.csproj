@@ -63,6 +63,9 @@
     <Compile Include="Views\TransactionAddWindow.xaml.cs">
       <DependentUpon>TransactionAddWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TransactionEditWindow.xaml.cs">
+      <DependentUpon>TransactionEditWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserLogin.xaml.cs">
       <DependentUpon>UserLogin.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\TransactionAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TransactionEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

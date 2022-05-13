@@ -66,5 +66,18 @@ namespace Project_TAB.Views
             loginWindow.Show();
             Close();
         }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+
+            int transactionId = ((TransactionDatagridModel)TransactionsDatagrid.SelectedItem).Id;
+            SqliteDataAccess.SelectTransactionById(new TransactionDatagridModel() { Id = transactionId });
+
+
+            TransactionEditWindow transactionAdd = new TransactionEditWindow();
+            transactionAdd.Show();
+
+            Close();
+        }
     }
 }
