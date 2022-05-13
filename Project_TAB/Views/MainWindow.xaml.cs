@@ -71,11 +71,13 @@ namespace Project_TAB.Views
         {
 
             int transactionId = ((TransactionDatagridModel)TransactionsDatagrid.SelectedItem).Id;
-            SqliteDataAccess.SelectTransactionById(new TransactionDatagridModel() { Id = transactionId });
 
+            var transaction = SqliteDataAccess.SelectTransactionById(new TransactionDatagridModel() { Id = transactionId });
 
-            TransactionEditWindow transactionAdd = new TransactionEditWindow();
-            transactionAdd.Show();
+            TransactionEditWindow transactionEdit = new TransactionEditWindow();
+            
+          
+            transactionEdit.Show();
 
             Close();
         }

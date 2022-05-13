@@ -33,7 +33,8 @@
             Margin="146,87,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" TextChanged="NameInput_TextChanged" 
+            />
 
         <Label
             Margin="146,119,0,0"

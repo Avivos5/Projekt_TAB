@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectTabLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,9 @@ namespace Project_TAB.Views
         public TransactionEditWindow()
         {
             InitializeComponent();
+          
         }
+
 
         private void GoBackToMainWindow()
         {
@@ -42,6 +45,11 @@ namespace Project_TAB.Views
         }
 
         private void EditTransactionButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NameInput_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
