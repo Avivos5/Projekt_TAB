@@ -72,9 +72,9 @@ namespace Project_TAB.Views
 
             int transactionId = ((TransactionDatagridModel)TransactionsDatagrid.SelectedItem).Id;
 
-            var transaction = SqliteDataAccess.SelectTransactionById(new TransactionDatagridModel() { Id = transactionId });
+            TransactionDatagridModel transaction = SqliteDataAccess.SelectTransactionById(transactionId);
 
-            TransactionEditWindow transactionEdit = new TransactionEditWindow();
+            TransactionEditWindow transactionEdit = new TransactionEditWindow(transaction);
             
           
             transactionEdit.Show();

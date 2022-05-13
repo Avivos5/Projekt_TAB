@@ -52,6 +52,17 @@ namespace ProjectTabLib
 
             }
         }
+
+        public static void updateTransaction(Object updatedTransaction)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var affectedRows = cnn.Execute("UPDATE Transactions SET Category_Id = @Category_Id, Account_Id = @Account_Id, DateTime = @DateTime, Name = @Name, Transaction_Amount = @Transaction_Amount, Income = @Income, Current_Amount = @Current_Amount WHERE Id = @Id", updatedTransaction);
+
+            }
+        }
+
+
         public static List<UserAccountModel> getUserAccounts(int userId)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -78,19 +89,19 @@ namespace ProjectTabLib
             }
         }
 
-        public static List<TransactionDatagridModel> SelectTransactionById(TransactionDatagridModel transactionRow)
+        public static TransactionDatagridModel SelectTransactionById(int transactionId)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 var p = new
                 {
-                    Id = transactionRow.Id
+                    Id = transactionId
                 };
 
                 string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where Transactions.id = @Id";
-                var output = cnn.Query<TransactionDatagridModel>(sql, p);
+                TransactionDatagridModel output = cnn.Query<TransactionDatagridModel>(sql, p).FirstOrDefault();
 
-                return output.ToList();
+                return output;
             }
         }
 

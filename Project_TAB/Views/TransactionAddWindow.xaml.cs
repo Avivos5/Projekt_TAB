@@ -28,7 +28,7 @@ namespace Project_TAB.Views
         {
             InitializeComponent();
             DataContext = this;
-            NameInput.Text = "elo";
+
             userAccounts = SqliteDataAccess.getUserAccounts(SqliteLogin.LoggedUserId);
             userCategories = SqliteDataAccess.getUserCategories(SqliteLogin.LoggedUserId);
         }

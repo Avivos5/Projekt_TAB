@@ -30,3 +30,13 @@ D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.CoreCompi
 D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.CopyComplete
 D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.dll
 D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.pdb
+C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\ProjectTabLib.dll
+C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\ProjectTabLib.pdb
+C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\Dapper.dll
+C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\System.Data.SQLite.dll
+C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\Dapper.xml
+C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\System.Data.SQLite.xml
+C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.AssemblyReference.cache
+C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.CoreCompileInputs.cache
+C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.dll
+C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.pdb
