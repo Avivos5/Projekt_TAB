@@ -14,7 +14,7 @@
 
     <Grid>
         <Label
-            Margin="109,22,0,0"
+            Margin="134,22,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Edycja Transakcji"

@@ -62,5 +62,21 @@ namespace Project_TAB.Views
             loginWindow.Show();
             Close();
         }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+
+            int categorieId = ((UserCategoryModel)CategoriesDatagrid.SelectedItem).Id;
+
+            UserCategoryModel category = SqliteDataAccess.SelectCategorieById(categorieId);
+
+            CategoryEditWindow categoryEdit = new CategoryEditWindow(category);
+
+
+            categoryEdit.Show();
+
+            Close();
+        }
+
     }
 }

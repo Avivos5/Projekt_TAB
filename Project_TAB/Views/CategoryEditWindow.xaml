@@ -1,22 +1,22 @@
 ﻿<Window
-    x:Class="Project_TAB.Views.CategorieAddWindow"
+    x:Class="Project_TAB.Views.CategoryEditWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Project_TAB.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="CategorieAddWindow"
+    Title="CategoryEditWindow"
     Width="425.941"
     Height="352.391"
-    Closing="CategorieAddWindow_Closing"
+    Closing="CategoryEditWindow_Closing"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
         <Label
-            Margin="109,22,0,0"
+            Margin="134,21,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Dodawanie Kategorii"
+            Content="Edycja Kategorii"
             FontSize="18"
             FontWeight="Bold" />
 
@@ -47,7 +47,7 @@
             Margin="166,255,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="AddCategorieButton_Click"
-            Content="Dodaj" />
+            Click="EditCategoryButton_Click"
+            Content="Edytuj" />
     </Grid>
 </Window>

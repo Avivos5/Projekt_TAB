@@ -37,8 +37,8 @@ namespace Project_TAB.Views
             InitializeComponent();
             DataContext = this;
 
-            userAccounts = SqliteDataAccess.getUserAccounts(SqliteLogin.LoggedUserId);
-            userCategories = SqliteDataAccess.getUserCategories(SqliteLogin.LoggedUserId);
+            userAccounts = SqliteDataAccess.getActiveUserAccounts(SqliteLogin.LoggedUserId);
+            userCategories = SqliteDataAccess.getActiveUserCategories(SqliteLogin.LoggedUserId);
 
             this.editTrans = transaction;
 

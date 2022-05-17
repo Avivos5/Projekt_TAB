@@ -44,6 +44,23 @@ namespace ProjectTabLib
                 return output.ToList();
             }
         }
+        
+        public static List<UserCategoryModel> getActiveUserCategories(int userId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    UserId = userId
+                };
+
+                string sql = @"select id, user_id, name as category_name, status from User_Categories where user_id = @userId and status = true";
+                var output = cnn.Query<UserCategoryModel>(sql, p);
+
+                return output.ToList();
+            }
+        }
+
         public static void addTransaction(Object newTransaction)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -93,15 +110,54 @@ namespace ProjectTabLib
             }
         }
 
-        //public static void updateTransaction(Object updatedTransaction)
-        //{
-        //    using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-        //    {
-        //        var affectedRows = cnn.Execute("UPDATE Transactions SET Category_Id = @Category_Id, Account_Id = @Account_Id, DateTime = @DateTime, Name = @Name, Transaction_Amount = @Transaction_Amount, Income = @Income, Current_Amount = @Current_Amount WHERE Id = @Id", updatedTransaction);
+        public static bool CheckIfEditCategoryExist(int userId, string name, int currentCatId)
+        {
+            var query = "SELECT * from User_Categories WHERE id != :currentCatId and user_id = :user_id and name = :name";
+            var dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("currentCatId", currentCatId);
+            dynamicParameters.Add("user_id", userId);
+            dynamicParameters.Add("name", name);
 
-        //    }
-        //}
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<UserCategoryModel>(query, dynamicParameters).FirstOrDefault();
 
+                if (output == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
+        public static UserCategoryModel SelectCategorieById(int categorieId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    Id = categorieId
+                };
+
+                //string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where Transactions.id = @Id";
+                string sql = @"select id, user_id, User_Categories.name as Category_Name, status from User_Categories where Id = @Id";
+                UserCategoryModel output = cnn.Query<UserCategoryModel>(sql, p).FirstOrDefault();
+
+                return output;
+            }
+        }
+
+        public static void updateCategory(Object updatedCategory)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var affectedRows = cnn.Execute("UPDATE User_Categories SET Name = @Name, Status = @Status WHERE Id = @Id", updatedCategory);
+
+            }
+        }
 
         public static List<UserAccountModel> getUserAccounts(int userId)
         {
@@ -113,6 +169,22 @@ namespace ProjectTabLib
                 };
 
                 string sql = @"select id, user_id, name as account_name, balance, status from Accounts where user_id = @userId";
+                var output = cnn.Query<UserAccountModel>(sql, p);
+
+                return output.ToList();
+            }
+        }
+
+        public static List<UserAccountModel> getActiveUserAccounts(int userId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    UserId = userId
+                };
+
+                string sql = @"select id, user_id, name as account_name, balance, status from Accounts where user_id = @userId and status = true";
                 var output = cnn.Query<UserAccountModel>(sql, p);
 
                 return output.ToList();

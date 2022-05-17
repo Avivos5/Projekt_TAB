@@ -11,7 +11,7 @@ namespace ProjectTabLib
         public int Id { get; set; }
         public int User_id { get; set; }
         public string Category_Name { get; set; }
-        public int Status { get; set; }
+        public bool Status { get; set; }
 
     }
 }

@@ -17,18 +17,18 @@
             Margin="0,37,0,0"
             AutoGenerateColumns="False"
             CanUserAddRows="False">
-            <!--<DataGrid.RowStyle>
+            <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Income}" Value="false">
-                            <Setter Property="Background" Value="#f7bbb7" />
+                        <DataTrigger Binding="{Binding Status}" Value="true">
+                            <Setter Property="Background" Value="#fff" />
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding Income}" Value="true">
-                            <Setter Property="Background" Value="#bdf7b7" />
+                        <DataTrigger Binding="{Binding Status}" Value="false">
+                            <Setter Property="Background" Value="#aaa" />
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
-            </DataGrid.RowStyle>-->
+            </DataGrid.RowStyle>
 
             <DataGrid.Columns>
                 <!--<DataGridTextColumn Binding="{Binding Path=DateTime}" Header="Data" />
@@ -42,7 +42,7 @@
                             <Button Click="Delete_Click" Content="Delete" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
 
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
@@ -50,7 +50,7 @@
                             <Button Click="Edit_Click" Content="Edit" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>-->
+                </DataGridTemplateColumn>
 
             </DataGrid.Columns>
         </DataGrid>
@@ -77,7 +77,7 @@
             VerticalAlignment="Top"
             Click="GoToCategoriesButton_Click"
             Content="Transakcje" />
-        
+
         <Button
             Width="75"
             Margin="707,10,0,0"

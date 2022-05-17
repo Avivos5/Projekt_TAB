@@ -99,3 +99,5 @@ C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\CategoriesWindow.b
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\TransactionEditWindow.baml
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\CategorieAddWindow.g.cs
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\CategorieAddWindow.baml
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\CategoryEditWindow.g.cs
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\CategoryEditWindow.baml

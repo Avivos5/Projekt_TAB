@@ -66,6 +66,9 @@
     <Compile Include="Views\CategoriesWindow.xaml.cs">
       <DependentUpon>CategoriesWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CategoryEditWindow.xaml.cs">
+      <DependentUpon>CategoryEditWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TransactionAddWindow.xaml.cs">
       <DependentUpon>TransactionAddWindow.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CategoriesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CategoryEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

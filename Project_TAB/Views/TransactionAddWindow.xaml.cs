@@ -29,8 +29,8 @@ namespace Project_TAB.Views
             InitializeComponent();
             DataContext = this;
 
-            userAccounts = SqliteDataAccess.getUserAccounts(SqliteLogin.LoggedUserId);
-            userCategories = SqliteDataAccess.getUserCategories(SqliteLogin.LoggedUserId);
+            userAccounts = SqliteDataAccess.getActiveUserAccounts(SqliteLogin.LoggedUserId);
+            userCategories = SqliteDataAccess.getActiveUserCategories(SqliteLogin.LoggedUserId);
         }
 
         private void AddTransactionButton_Click(object sender, RoutedEventArgs e)
