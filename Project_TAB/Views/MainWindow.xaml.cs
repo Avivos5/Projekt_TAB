@@ -58,6 +58,13 @@ namespace Project_TAB.Views
             refreshTransactionsTable();
         }
 
+        private void GoToTransactionsButton_Click(object sender, RoutedEventArgs e)
+        {
+            CategoriesWindow categoriesWindow = new CategoriesWindow();
+            categoriesWindow.Show();
+            Close();
+        }
+
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
             SqliteLogin.LoggedUserId = 0;

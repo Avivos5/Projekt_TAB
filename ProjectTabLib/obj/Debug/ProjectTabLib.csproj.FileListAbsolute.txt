@@ -40,3 +40,4 @@ C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.A
 C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.CoreCompileInputs.cache
 C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.dll
 C:\Users\Mati\Desktop\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.pdb
+C:\Users\Mati\Desktop\Project_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.AssemblyReference.cache

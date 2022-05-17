@@ -60,6 +60,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\CategorieAddWindow.xaml.cs">
+      <DependentUpon>CategorieAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoriesWindow.xaml.cs">
+      <DependentUpon>CategoriesWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TransactionAddWindow.xaml.cs">
       <DependentUpon>TransactionAddWindow.xaml</DependentUpon>
     </Compile>
@@ -72,6 +78,14 @@
     <Compile Include="Views\UserRegister.xaml.cs">
       <DependentUpon>UserRegister.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\CategorieAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CategoriesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

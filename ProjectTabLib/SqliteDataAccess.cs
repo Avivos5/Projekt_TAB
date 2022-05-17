@@ -62,6 +62,46 @@ namespace ProjectTabLib
             }
         }
 
+        public static void addCategorie(Object newCategorie)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var affectedRows = cnn.Execute("INSERT INTO User_Categories (user_id, name, status) VALUES (@User_Id, @Name, @Status)", newCategorie);
+
+            }
+        }
+
+        public static bool CheckIfCategoryExist(int userId, string name)
+        {
+            var query = "SELECT * from User_Categories WHERE user_id = :user_id and name = :name";
+            var dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("user_id", userId);
+            dynamicParameters.Add("name", name);
+
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<UserCategoryModel>(query, dynamicParameters).FirstOrDefault();
+
+                if (output == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
+        //public static void updateTransaction(Object updatedTransaction)
+        //{
+        //    using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+        //    {
+        //        var affectedRows = cnn.Execute("UPDATE Transactions SET Category_Id = @Category_Id, Account_Id = @Account_Id, DateTime = @DateTime, Name = @Name, Transaction_Amount = @Transaction_Amount, Income = @Income, Current_Amount = @Current_Amount WHERE Id = @Id", updatedTransaction);
+
+        //    }
+        //}
+
 
         public static List<UserAccountModel> getUserAccounts(int userId)
         {
