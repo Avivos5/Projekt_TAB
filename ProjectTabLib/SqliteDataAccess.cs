@@ -229,6 +229,60 @@ namespace ProjectTabLib
             }
         }
 
+        public static void addAccount(Object newAccount)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var affectedRows = cnn.Execute("INSERT INTO Accounts (user_id, name, balance, status) VALUES (@User_Id, @Name, @Balance, @Status)", newAccount);
+
+            }
+        }
+
+        public static bool CheckIfAccountExist(int userId, string name)
+        {
+            var query = "SELECT * from Accounts WHERE user_id = :user_id and name = :name";
+            var dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("user_id", userId);
+            dynamicParameters.Add("name", name);
+
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<UserCategoryModel>(query, dynamicParameters).FirstOrDefault();
+
+                if (output == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
+        public static bool CheckIfEditAccountExist(int userId, string name, int currentAccId)
+        {
+            var query = "SELECT * from Accounts WHERE id != :currentAccId and user_id = :user_id and name = :name";
+            var dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("currentAccId", currentAccId);
+            dynamicParameters.Add("user_id", userId);
+            dynamicParameters.Add("name", name);
+
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<UserCategoryModel>(query, dynamicParameters).FirstOrDefault();
+
+                if (output == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
         public static List<UserAccountModel> getUserAccounts(int userId)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -287,7 +341,30 @@ namespace ProjectTabLib
             }
         }
 
+        public static UserAccountModel SelectAccountById(int accountId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    Id = accountId
+                };
 
+                string sql = @"select id, user_id, Accounts.name as Account_Name, status from Accounts where Id = @Id";
+                UserAccountModel output = cnn.Query<UserAccountModel>(sql, p).FirstOrDefault();
+
+                return output;
+            }
+        }
+
+        public static void updateAccount(Object updatedAccount)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var affectedRows = cnn.Execute("UPDATE Accounts SET Name = @Name, Status = @Status WHERE Id = @Id", updatedAccount);
+
+            }
+        }
 
 
         private static string LoadConnectionString(string id = "Default")

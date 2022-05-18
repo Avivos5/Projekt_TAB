@@ -12,6 +12,6 @@ namespace ProjectTabLib
         public int User_id { get; set; }
         public string Account_Name { get; set; }
         public int Balance { get; set; }
-        public int Status { get; set; }
+        public bool Status { get; set; }
     }
 }

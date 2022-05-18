@@ -62,7 +62,7 @@
             FontWeight="Bold" />
         <Button
             Width="106"
-            Margin="480,10,0,0"
+            Margin="376,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="AddButton_Click"
@@ -71,11 +71,19 @@
 
         <Button
             Width="75"
-            Margin="609,10,0,0"
+            Margin="505,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="GoToTransactionsButton_Click"
+            Click="GoToCategoriesButton_Click"
             Content="Kategorie" />
+
+        <Button
+            Width="75"
+            Margin="602,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="GoToAccountsButton_Click"
+            Content="Konta" />
 
         <Button
             Width="75"
@@ -84,37 +92,59 @@
             VerticalAlignment="Top"
             Click="LogoutButton_Click"
             Content="Wyloguj" />
-        <Label Content="Kategorie" HorizontalAlignment="Left" Margin="19,86,0,0" VerticalAlignment="Top" Width="108"/>
-        <ComboBox 
-            HorizontalAlignment="Left" 
-                  Margin="19,117,0,0" 
-                  VerticalAlignment="Top" 
-                  Width="103"   
-                  SelectedValuePath="Id"
-                  Name ="Categories_ComboBox"
-                  DisplayMemberPath="Category_Name"
-                  ItemsSource="{Binding userCategories}"
-                  />
-                   
-        <Label Content="Konto" HorizontalAlignment="Left" Margin="19,144,0,0" VerticalAlignment="Top" Width="79"/>
-        <ComboBox 
-            HorizontalAlignment="Left" 
-            Margin="19,170,0,0" 
-            VerticalAlignment="Top" 
+        <Label
+            Width="108"
+            Margin="19,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Kategorie" />
+        <ComboBox
+            Name="Categories_ComboBox"
             Width="103"
+            Margin="19,117,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="Category_Name"
+            ItemsSource="{Binding userCategories}"
+            SelectedValuePath="Id" />
+
+        <Label
+            Width="79"
+            Margin="19,144,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Konto" />
+        <ComboBox
+            Name="Accounts_ComboBox"
+            Width="103"
+            Margin="19,170,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
             DisplayMemberPath="Account_Name"
             ItemsSource="{Binding userAccounts}"
-            SelectedValuePath="Id"
-            Name ="Accounts_ComboBox"
-            />
-        <Button 
-            Content="Filtruj" 
-            HorizontalAlignment="Left" 
-            Margin="19,213,0,0" 
-            VerticalAlignment="Top" 
-            Width="75" Click="Button_Click"/>
-        <Label Content="FILTRACJA" HorizontalAlignment="Left" Margin="29,55,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="189" Margin="10,55,0,0" VerticalAlignment="Top" Width="117"/>
+            SelectedValuePath="Id" />
+        <Button
+            Width="75"
+            Margin="19,213,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Button_Click"
+            Content="Filtruj" />
+        <Label
+            Margin="29,55,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="FILTRACJA"
+            FontWeight="Bold" />
+        <Border
+            Width="117"
+            Height="189"
+            Margin="10,55,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="Black"
+            BorderThickness="1" />
+
 
 
     </Grid>

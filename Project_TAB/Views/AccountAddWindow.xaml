@@ -1,0 +1,69 @@
+﻿<Window
+    x:Class="Project_TAB.Views.AccountAddWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Project_TAB.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AccountAddWindow"
+    Width="425.941"
+    Height="352.391"
+    Closing="AccountAddWindow_Closing"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <Label
+            Margin="127,22,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Dodawanie Konta"
+            FontSize="18"
+            FontWeight="Bold" />
+
+
+        <Label
+            Margin="146,74,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Nazwa" />
+        <TextBox
+            Name="NameInput"
+            Width="120"
+            Height="23"
+            Margin="146,100,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+
+        <Label
+            Margin="146,137,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Początkowy bilans" />
+        <TextBox
+            x:Name="BalanceInput"
+            Width="120"
+            Height="23"
+            Margin="146,163,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            PreviewTextInput="NumberValidationTextBox"
+            TextWrapping="Wrap" />
+
+        <CheckBox
+            Name="HiddenCheckBox"
+            Margin="168,212,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Aktywny" />
+
+        <Button
+            Width="75"
+            Margin="168,255,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="AddAccountButton_Click"
+            Content="Dodaj" />
+
+    </Grid>
+</Window>

@@ -139,3 +139,9 @@ C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.csproj.Core
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.csproj.CopyComplete
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Project_TAB.exe
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Project_TAB.pdb
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\AccountsWindow.g.cs
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\AccountsWindow.baml
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\AccountAddWindow.g.cs
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\AccountAddWindow.baml
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\AccountEditWindow.g.cs
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\AccountEditWindow.baml

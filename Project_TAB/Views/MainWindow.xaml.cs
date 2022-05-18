@@ -32,7 +32,7 @@ namespace Project_TAB.Views
             DataContext = this;
 
             userAccounts = SqliteDataAccess.getActiveUserAccounts(SqliteLogin.LoggedUserId);
-            userAccounts.Insert(0,new UserAccountModel { Account_Name = "Wszystkie", Balance =0, Id=-1, Status=1, User_id = SqliteLogin.LoggedUserId});
+            userAccounts.Insert(0,new UserAccountModel { Account_Name = "Wszystkie", Balance =0, Id=-1, Status=true, User_id = SqliteLogin.LoggedUserId});
             userCategories = SqliteDataAccess.getActiveUserCategories(SqliteLogin.LoggedUserId);
             userCategories.Insert(0, new UserCategoryModel { Category_Name = "Wszystkie", User_id = SqliteLogin.LoggedUserId, Id = -1, Status = true });
             Accounts_ComboBox.SelectedIndex = 0;
@@ -68,10 +68,17 @@ namespace Project_TAB.Views
             refreshTransactionsTable();
         }
 
-        private void GoToTransactionsButton_Click(object sender, RoutedEventArgs e)
+        private void GoToCategoriesButton_Click(object sender, RoutedEventArgs e)
         {
             CategoriesWindow categoriesWindow = new CategoriesWindow();
             categoriesWindow.Show();
+            Close();
+        }
+
+        private void GoToAccountsButton_Click(object sender, RoutedEventArgs e)
+        {
+            AccountsWindow accountsWindow = new AccountsWindow();
+            accountsWindow.Show();
             Close();
         }
 

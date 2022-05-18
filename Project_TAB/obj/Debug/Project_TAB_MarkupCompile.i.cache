@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Mati\Desktop\Project_TAB\Project_TAB\App.xaml
-8798512723
+111945344288
 1-1184264833
-13-2004151761
+16-999677516
 151081703797
-Views\CategorieAddWindow.xaml;Views\CategoriesWindow.xaml;Views\CategoryEditWindow.xaml;Views\MainWindow.xaml;Views\TransactionAddWindow.xaml;Views\TransactionEditWindow.xaml;Views\UserLogin.xaml;Views\UserRegister.xaml;
+Views\AccountAddWindow.xaml;Views\AccountEditWindow.xaml;Views\AccountsWindow.xaml;Views\CategorieAddWindow.xaml;Views\CategoriesWindow.xaml;Views\CategoryEditWindow.xaml;Views\MainWindow.xaml;Views\TransactionAddWindow.xaml;Views\TransactionEditWindow.xaml;Views\UserLogin.xaml;Views\UserRegister.xaml;
 
 True
 
