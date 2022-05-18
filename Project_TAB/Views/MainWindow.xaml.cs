@@ -22,11 +22,21 @@ namespace Project_TAB.Views
     public partial class MainWindow : Window
     {
         List<TransactionDatagridModel> transactions = new List<TransactionDatagridModel>();
-        
+
+        public List<UserCategoryModel> userCategories { get; set; }
+        public List<UserAccountModel> userAccounts { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
 
+            userAccounts = SqliteDataAccess.getActiveUserAccounts(SqliteLogin.LoggedUserId);
+            userAccounts.Insert(0,new UserAccountModel { Account_Name = "Wszystkie", Balance =0, Id=-1, Status=1, User_id = SqliteLogin.LoggedUserId});
+            userCategories = SqliteDataAccess.getActiveUserCategories(SqliteLogin.LoggedUserId);
+            userCategories.Insert(0, new UserCategoryModel { Category_Name = "Wszystkie", User_id = SqliteLogin.LoggedUserId, Id = -1, Status = true });
+            Accounts_ComboBox.SelectedIndex = 0;
+            Categories_ComboBox.SelectedIndex = 0;
             WelcomeLabel.Content = $"Witaj, {SqliteLogin.LoggedUserLogin}";
 
             refreshTransactionsTable();
@@ -87,6 +97,36 @@ namespace Project_TAB.Views
             transactionEdit.Show();
 
             Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            if (Categories_ComboBox.SelectedIndex == 0 && Accounts_ComboBox.SelectedIndex == 0)
+            {
+                refreshTransactionsTable();
+                return;
+            }
+            else if (Categories_ComboBox.SelectedIndex != 0 && Accounts_ComboBox.SelectedIndex != 0)
+            {
+                transactions = SqliteDataAccess.LoadTransactionsByAccountNameAndCategoriesName(Accounts_ComboBox.Text, Categories_ComboBox.Text, SqliteLogin.LoggedUserId);
+                
+                TransactionsDatagrid.ItemsSource = transactions;
+                return;
+            }
+            else if (Categories_ComboBox.SelectedIndex == 0 && Accounts_ComboBox.SelectedIndex != 0)
+            {
+               
+                transactions = SqliteDataAccess.LoadTransactionsByAccountName(Accounts_ComboBox.Text, SqliteLogin.LoggedUserId);
+                TransactionsDatagrid.ItemsSource = transactions;
+                return;
+            }
+            else if (Categories_ComboBox.SelectedIndex != 0 && Accounts_ComboBox.SelectedIndex == 0)
+            {
+                transactions = SqliteDataAccess.LoadTransactionsByCategorieName(Categories_ComboBox.Text, SqliteLogin.LoggedUserId);
+                TransactionsDatagrid.ItemsSource = transactions;
+                return;
+            }
         }
     }
 }

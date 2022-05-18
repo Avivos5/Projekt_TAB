@@ -14,7 +14,7 @@
 
         <DataGrid
             x:Name="TransactionsDatagrid"
-            Margin="0,37,0,0"
+            Margin="132,37,0,0"
             AutoGenerateColumns="False"
             CanUserAddRows="False">
             <DataGrid.RowStyle>
@@ -62,7 +62,7 @@
             FontWeight="Bold" />
         <Button
             Width="106"
-            Margin="212,10,0,0"
+            Margin="480,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="AddButton_Click"
@@ -71,7 +71,7 @@
 
         <Button
             Width="75"
-            Margin="454,10,0,0"
+            Margin="609,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="GoToTransactionsButton_Click"
@@ -84,7 +84,38 @@
             VerticalAlignment="Top"
             Click="LogoutButton_Click"
             Content="Wyloguj" />
-       
+        <Label Content="Kategorie" HorizontalAlignment="Left" Margin="19,86,0,0" VerticalAlignment="Top" Width="108"/>
+        <ComboBox 
+            HorizontalAlignment="Left" 
+                  Margin="19,117,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="103"   
+                  SelectedValuePath="Id"
+                  Name ="Categories_ComboBox"
+                  DisplayMemberPath="Category_Name"
+                  ItemsSource="{Binding userCategories}"
+                  />
+                   
+        <Label Content="Konto" HorizontalAlignment="Left" Margin="19,144,0,0" VerticalAlignment="Top" Width="79"/>
+        <ComboBox 
+            HorizontalAlignment="Left" 
+            Margin="19,170,0,0" 
+            VerticalAlignment="Top" 
+            Width="103"
+            DisplayMemberPath="Account_Name"
+            ItemsSource="{Binding userAccounts}"
+            SelectedValuePath="Id"
+            Name ="Accounts_ComboBox"
+            />
+        <Button 
+            Content="Filtruj" 
+            HorizontalAlignment="Left" 
+            Margin="19,213,0,0" 
+            VerticalAlignment="Top" 
+            Width="75" Click="Button_Click"/>
+        <Label Content="FILTRACJA" HorizontalAlignment="Left" Margin="29,55,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="189" Margin="10,55,0,0" VerticalAlignment="Top" Width="117"/>
+
 
     </Grid>
 </Window>

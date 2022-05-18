@@ -29,6 +29,74 @@ namespace ProjectTabLib
             }
         }
 
+        public static List<TransactionDatagridModel> LoadTransactionsByCategorieName(String category_name, int userId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    name = category_name,
+                    Id = userId
+                };
+
+                string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where (User_Categories.name = @name and Transactions.user_id = @Id)";
+                var output = cnn.Query<TransactionDatagridModel>(sql, p);
+
+                return output.ToList();
+            }
+        }
+
+        public static List<TransactionDatagridModel> LoadTransactionsByAccountName(String account_name, int userId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    name = account_name,
+                    Id = userId
+                };
+
+                string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where (Accounts.name = @name and Transactions.user_id = @Id)";
+                var output = cnn.Query<TransactionDatagridModel>(sql, p);
+
+                return output.ToList();
+            }
+        }
+
+        public static List<TransactionDatagridModel> LoadTransactionsByAccountNameAndCategoriesName(String account_name,String category_name, int userId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    acc_name = account_name,
+                    Id = userId,
+                    cat_name = category_name
+                };
+
+                string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where (Accounts.name = @acc_name and Transactions.user_id = @Id and User_Categories.name = @cat_name)";
+                var output = cnn.Query<TransactionDatagridModel>(sql, p);
+
+                return output.ToList();
+            }
+        }
+
+        public static List<TransactionDatagridModel> LoadTransactionsByAccountName(String account_name)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    name = account_name
+                };
+
+                string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where Accounts.name = @name";
+                var output = cnn.Query<TransactionDatagridModel>(sql, p);
+
+                return output.ToList();
+            }
+        }
+
         public static List<UserCategoryModel> getUserCategories(int userId)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -150,6 +218,8 @@ namespace ProjectTabLib
             }
         }
 
+        
+
         public static void updateCategory(Object updatedCategory)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -216,6 +286,9 @@ namespace ProjectTabLib
                 return output;
             }
         }
+
+
+
 
         private static string LoadConnectionString(string id = "Default")
         {
