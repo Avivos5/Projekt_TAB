@@ -156,3 +156,4 @@ C:\Users\Mati\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountsWindow.bam
 C:\Users\Mati\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\CategorieAddWindow.baml
 C:\Users\Mati\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoriesWindow.baml
 C:\Users\Mati\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoryEditWindow.baml
+C:\Users\Mati\Desktop\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.csproj.CopyComplete

@@ -12,6 +12,55 @@
     mc:Ignorable="d">
     <Grid>
 
+        <Label
+            Name="WelcomeLabel"
+            Margin="19,6,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Witaj, *UserName*"
+            FontWeight="Bold" />
+
+        <Label
+            Name="TotalBalance"
+            Margin="161,6,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Główny Balans: XXXX (zł)"
+            FontWeight="Bold" />
+
+        <Button
+            Width="106"
+            Margin="376,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="AddButton_Click"
+            Content="Dodaj Transakcje" />
+
+        <Button
+            Width="75"
+            Margin="505,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="GoToCategoriesButton_Click"
+            Content="Kategorie" />
+
+        <Button
+            Width="75"
+            Margin="602,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="GoToAccountsButton_Click"
+            Content="Konta" />
+
+        <Button
+            Width="75"
+            Margin="707,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="LogoutButton_Click"
+            Content="Wyloguj" />
+
+
         <DataGrid
             x:Name="TransactionsDatagrid"
             Margin="132,37,0,0"
@@ -53,45 +102,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Label
-            Name="WelcomeLabel"
-            Margin="19,6,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Witaj, *UserName*"
-            FontWeight="Bold" />
-        <Button
-            Width="106"
-            Margin="376,10,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Click="AddButton_Click"
-            Content="Dodaj Transakcje" />
 
-
-        <Button
-            Width="75"
-            Margin="505,10,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Click="GoToCategoriesButton_Click"
-            Content="Kategorie" />
-
-        <Button
-            Width="75"
-            Margin="602,10,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Click="GoToAccountsButton_Click"
-            Content="Konta" />
-
-        <Button
-            Width="75"
-            Margin="707,10,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Click="LogoutButton_Click"
-            Content="Wyloguj" />
         <Label
             Width="108"
             Margin="19,86,0,0"

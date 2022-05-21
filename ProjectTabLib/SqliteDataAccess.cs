@@ -406,8 +406,25 @@ namespace ProjectTabLib
             }
         }
 
+        //Balance-------------
 
+        public static double countTotalBalance(int userId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    Id = userId,
+                };
 
+                string sql = @"select sum(balance) from Accounts where user_id = @Id";
+                var output = cnn.ExecuteScalar<double>(sql, p);
+
+                //var tmp = output
+                return output;
+            }
+        }
+         
 
 
 

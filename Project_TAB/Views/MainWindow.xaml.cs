@@ -26,6 +26,8 @@ namespace Project_TAB.Views
         public List<UserCategoryModel> userCategories { get; set; }
         public List<UserAccountModel> userAccounts { get; set; }
 
+        private double totalBalance { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -37,7 +39,11 @@ namespace Project_TAB.Views
             userCategories.Insert(0, new UserCategoryModel { Category_Name = "Wszystkie", User_id = SqliteLogin.LoggedUserId, Id = -1, Status = true });
             Accounts_ComboBox.SelectedIndex = 0;
             Categories_ComboBox.SelectedIndex = 0;
+
             WelcomeLabel.Content = $"Witaj, {SqliteLogin.LoggedUserLogin}";
+
+            totalBalance = SqliteDataAccess.countTotalBalance(SqliteLogin.LoggedUserId);
+            TotalBalance.Content = $"Główny Balans: {totalBalance} (zł)";
 
             refreshTransactionsTable();
             
