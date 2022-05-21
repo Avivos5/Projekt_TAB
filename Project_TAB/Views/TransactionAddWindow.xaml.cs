@@ -24,6 +24,9 @@ namespace Project_TAB.Views
     {
         public List<UserCategoryModel> userCategories { get; set; }
         public List<UserAccountModel> userAccounts { get; set; }
+
+        private Regex amountRgx = new Regex(@"^[0-9]*(\.[0-9]{2})?$");
+
         public TransactionAddWindow()
         {
             InitializeComponent();
@@ -41,6 +44,10 @@ namespace Project_TAB.Views
             if (CategoriesComboBox.SelectedValue == null || AccountsComboBox.SelectedValue == null || TransactionDatePicker.SelectedDate == null || NameInput.Text.Length == 0 || AmountInput.Text.Length == 0)
             {
                 MessageBox.Show("Uzupełnij wszystkie pola.");
+            }
+            else if (!amountRgx.IsMatch(AmountInput.Text))
+            {
+                MessageBox.Show("Zły format kwoty! (Maksymalnie dwa miejsca po kropce).");
             }
             else
             {

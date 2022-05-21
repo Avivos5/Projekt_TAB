@@ -26,11 +26,7 @@ namespace Project_TAB.Views
         public List<UserAccountModel> userAccounts { get; set; }
         public TransactionDatagridModel editTrans { get; set; }
 
-        //public TransactionEditWindow()
-        //{
-        //    InitializeComponent();
-          
-        //}
+        private Regex amountRgx = new Regex(@"^[0-9]*(\.[0-9]{2})?$");
 
         public TransactionEditWindow(TransactionDatagridModel transaction)
         {
@@ -75,6 +71,10 @@ namespace Project_TAB.Views
             if (CategoriesComboBox.SelectedValue == null || AccountsComboBox.SelectedValue == null || TransactionDatePicker.SelectedDate == null || NameInput.Text.Length == 0 || AmountInput.Text.Length == 0)
             {
                 MessageBox.Show("Uzupełnij wszystkie pola.");
+            }
+            else if (!amountRgx.IsMatch(AmountInput.Text))
+            {
+                MessageBox.Show("Zły format kwoty! (Maksymalnie dwa miejsca po kropce).");
             }
             else
             {

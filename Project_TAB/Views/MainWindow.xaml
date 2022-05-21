@@ -35,7 +35,7 @@
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Nazwa" />
                 <DataGridTextColumn Binding="{Binding Path=Category_Name}" Header="Kategoria" />
                 <DataGridTextColumn Binding="{Binding Path=Account_Name}" Header="Konto" />
-                <DataGridTextColumn Binding="{Binding Path=Transaction_Amount}" Header="Wartość transakcji" />
+                <DataGridTextColumn Binding="{Binding Path=Transaction_Amount}" Header="Wartość transakcji (zł)" />
                 <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

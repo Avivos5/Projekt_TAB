@@ -39,7 +39,7 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Account_Name}" Header="Nazwa" />
-                <DataGridTextColumn Binding="{Binding Path=Balance}" Header="Balans" />
+                <DataGridTextColumn Binding="{Binding Path=Balance}" Header="Balans (zł)" />
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -79,7 +79,7 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Account_Name}" Header="Nazwa" />
-                <DataGridTextColumn Binding="{Binding Path=Balance}" Header="Balans" />
+                <DataGridTextColumn Binding="{Binding Path=Balance}" Header="Balans (zł)" />
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

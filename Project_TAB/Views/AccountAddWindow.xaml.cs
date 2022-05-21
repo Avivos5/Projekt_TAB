@@ -22,6 +22,7 @@ namespace Project_TAB.Views
     /// </summary>
     public partial class AccountAddWindow : Window
     {
+        private Regex amountRgx = new Regex(@"^[0-9]*(\.[0-9]{2})?$");
         public AccountAddWindow()
         {
             InitializeComponent();
@@ -36,6 +37,10 @@ namespace Project_TAB.Views
             if (NameInput.Text.Length == 0 || BalanceInput.Text.Length == 0)
             {
                 MessageBox.Show("Uzupełnij wszystkie pola.");
+            }
+            else if (!amountRgx.IsMatch(BalanceInput.Text))
+            {
+                MessageBox.Show("Zły format kwoty! (Maksymalnie dwa miejsca po kropce).");
             }
             else if (SqliteDataAccess.CheckIfAccountExist(SqliteLogin.LoggedUserId, NameInput.Text) == true)
             {
