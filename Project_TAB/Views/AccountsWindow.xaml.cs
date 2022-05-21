@@ -21,7 +21,8 @@ namespace Project_TAB.Views
     public partial class AccountsWindow : Window
     {
 
-        List<UserAccountModel> accounts = new List<UserAccountModel>();
+        List<UserAccountModel> activeAccounts = new List<UserAccountModel>();
+        List<UserAccountModel> inactiveAccounts = new List<UserAccountModel>();
 
 
         public AccountsWindow()
@@ -33,9 +34,11 @@ namespace Project_TAB.Views
 
         public void refreshAccountsTable()
         {
-            accounts = SqliteDataAccess.getUserAccounts(SqliteLogin.LoggedUserId);
+            activeAccounts = SqliteDataAccess.getActiveUserAccounts(SqliteLogin.LoggedUserId);
+            inactiveAccounts = SqliteDataAccess.getInactiveUserAccounts(SqliteLogin.LoggedUserId);
 
-            AccountsDatagrid.ItemsSource = accounts;
+            AccountsDatagrid.ItemsSource = activeAccounts;
+            InactiveAccountsDatagrid.ItemsSource = inactiveAccounts;
 
         }
 
@@ -67,6 +70,21 @@ namespace Project_TAB.Views
         {
 
             int accountId = ((UserAccountModel)AccountsDatagrid.SelectedItem).Id;
+
+            UserAccountModel account = SqliteDataAccess.SelectAccountById(accountId);
+
+            AccountEditWindow accountEdit = new AccountEditWindow(account);
+
+
+            accountEdit.Show();
+
+            Close();
+        }
+        
+        private void EditInactive_Click(object sender, RoutedEventArgs e)
+        {
+
+            int accountId = ((UserAccountModel)InactiveAccountsDatagrid.SelectedItem).Id;
 
             UserAccountModel account = SqliteDataAccess.SelectAccountById(accountId);
 

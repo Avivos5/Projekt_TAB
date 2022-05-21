@@ -21,7 +21,8 @@ namespace Project_TAB.Views
     public partial class CategoriesWindow : Window
     {
 
-        List<UserCategoryModel> categories = new List<UserCategoryModel>();
+        List<UserCategoryModel> activeCategories = new List<UserCategoryModel>();
+        List<UserCategoryModel> inactiveCategories = new List<UserCategoryModel>();
 
         public CategoriesWindow()
         {
@@ -33,9 +34,11 @@ namespace Project_TAB.Views
 
         public void refreshCategoriesTable()
         {
-            categories = SqliteDataAccess.getUserCategories(SqliteLogin.LoggedUserId);
+            activeCategories = SqliteDataAccess.getActiveUserCategories(SqliteLogin.LoggedUserId);
+            inactiveCategories = SqliteDataAccess.getInactiveUserCategories(SqliteLogin.LoggedUserId);
 
-            CategoriesDatagrid.ItemsSource = categories;
+            CategoriesDatagrid.ItemsSource = activeCategories;
+            InactiveCategoriesDatagrid.ItemsSource = inactiveCategories;
 
         }
 
@@ -67,6 +70,21 @@ namespace Project_TAB.Views
         {
 
             int categorieId = ((UserCategoryModel)CategoriesDatagrid.SelectedItem).Id;
+
+            UserCategoryModel category = SqliteDataAccess.SelectCategorieById(categorieId);
+
+            CategoryEditWindow categoryEdit = new CategoryEditWindow(category);
+
+
+            categoryEdit.Show();
+
+            Close();
+        }
+
+        private void EditInactive_Click(object sender, RoutedEventArgs e)
+        {
+
+            int categorieId = ((UserCategoryModel)InactiveCategoriesDatagrid.SelectedItem).Id;
 
             UserCategoryModel category = SqliteDataAccess.SelectCategorieById(categorieId);
 

@@ -12,9 +12,16 @@
     mc:Ignorable="d">
     <Grid>
 
+        <Label
+            Margin="94,45,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Aktywne Kategorie"
+            FontWeight="Bold" />
+
         <DataGrid
             x:Name="CategoriesDatagrid"
-            Margin="0,37,0,0"
+            Margin="0,76,440,0"
             AutoGenerateColumns="False"
             CanUserAddRows="False">
             <DataGrid.RowStyle>
@@ -42,6 +49,46 @@
 
             </DataGrid.Columns>
         </DataGrid>
+
+
+        <Label
+            Margin="560,45,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Niekatywne Kategorie"
+            FontWeight="Bold" />
+
+        <DataGrid
+            x:Name="InactiveCategoriesDatagrid"
+            Margin="440,76,0,0"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Status}" Value="true">
+                            <Setter Property="Background" Value="#fff" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Status}" Value="false">
+                            <Setter Property="Background" Value="#aaa" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Category_Name}" Header="Nazwa" />
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="EditInactive_Click" Content="Edit" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
         <Label
             Name="WelcomeLabel"
             Margin="19,6,0,0"
