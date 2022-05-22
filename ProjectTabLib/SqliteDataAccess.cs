@@ -83,6 +83,62 @@ namespace ProjectTabLib
             }
         }
 
+        public static List<TransactionDatagridModel> LoadTransactionsByDateToDate(String dateOne, String dateTwo, int userId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    dateOne = dateOne,
+                    Id = userId,
+                    dateTwo = dateTwo,
+                };
+
+                string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where  (Transactions.user_id = 7 AND datetime BETWEEN @dateOne and @dateTwo)";
+                var output = cnn.Query<TransactionDatagridModel>(sql, p);
+
+                return output.ToList();
+            }
+        }
+        public static List<TransactionDatagridModel> LoadTransactionsByDateToDateAndCategories(String dateOne, String dateTwo, int userId, String categoryName)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    categoryName = categoryName,
+                    dateOne = dateOne,
+                    Id = userId,
+                    dateTwo = dateTwo,
+                };
+
+                string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where  (Transactions.user_id = @userId AND datetime BETWEEN @dateOne and @dateTwo and User_Categories.name = @categoryName)";
+                var output = cnn.Query<TransactionDatagridModel>(sql, p);
+
+                return output.ToList();
+            }
+        }
+
+
+        public static List<TransactionDatagridModel> LoadTransactionsByDateToDateAndCategoriesAndAccounts(String dateOne, String dateTwo, int userId, String categoryName, String accountName)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    categoryName = categoryName,
+                    dateOne = dateOne,
+                    Id = userId,
+                    dateTwo = dateTwo,
+                    accountsName = accountName,
+                };
+
+                string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where  (Transactions.user_id = @Id AND datetime BETWEEN @dateOne and @dateTwo and User_Categories.name = @categoryName and Accounts.name = @accountsName)";
+                var output = cnn.Query<TransactionDatagridModel>(sql, p);
+
+                return output.ToList();
+            }
+        }
         public static List<TransactionDatagridModel> LoadTransactionsByAccountName(String account_name)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))

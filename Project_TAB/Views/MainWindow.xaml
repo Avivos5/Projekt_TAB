@@ -136,7 +136,7 @@
             SelectedValuePath="Id" />
         <Button
             Width="75"
-            Margin="19,213,0,0"
+            Margin="29,357,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Button_Click"
@@ -148,13 +148,17 @@
             Content="FILTRACJA"
             FontWeight="Bold" />
         <Border
-            Width="117"
-            Height="189"
-            Margin="10,55,0,0"
+            Width="112"
+            Height="337"
+            Margin="11,0,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            VerticalAlignment="Center"
             BorderBrush="Black"
             BorderThickness="1" />
+        <Label Content="Od&#xD;&#xA;" HorizontalAlignment="Left" Margin="18,202,0,0" VerticalAlignment="Top"/>
+        <Label Content="Do&#xD;&#xA;" HorizontalAlignment="Left" Margin="19,268,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="datePicker1" HorizontalAlignment="Left" Margin="19,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.096,0.21"/>
+        <DatePicker x:Name="datePicker2" HorizontalAlignment="Left" Margin="19,302,0,0" VerticalAlignment="Top"/>
 
 
 

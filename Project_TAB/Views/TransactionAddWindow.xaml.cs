@@ -56,7 +56,7 @@ namespace Project_TAB.Views
                     User_Id = SqliteLogin.LoggedUserId,
                     Category_Id = int.Parse(CategoriesComboBox.SelectedValue.ToString()),
                     Account_Id = int.Parse(AccountsComboBox.SelectedValue.ToString()),
-                    DateTime = TransactionDatePicker.SelectedDate.Value.ToShortDateString(),
+                    DateTime = TransactionDatePicker.SelectedDate.Value.ToString("yyyy-MM-dd"),
                     Name = NameInput.Text,
                     Transaction_Amount = Convert.ToDouble(AmountInput.Text, provider),
                     Income = IncomeCheckBox.IsChecked == true ? true : false,

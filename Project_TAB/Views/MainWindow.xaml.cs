@@ -123,25 +123,30 @@ namespace Project_TAB.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            if (Categories_ComboBox.SelectedIndex == 0 && Accounts_ComboBox.SelectedIndex == 0)
+            if (datePicker1.SelectedDate == null && datePicker2.SelectedDate == null && Categories_ComboBox.SelectedIndex == 0 && Accounts_ComboBox.SelectedIndex == 0)
             {
-                refreshTransactionsTable();
+                MessageBox.Show("Uzupełnij wszystkie pola.");
                 return;
             }
-            else if (Categories_ComboBox.SelectedIndex != 0 && Accounts_ComboBox.SelectedIndex != 0)
+            else if (Categories_ComboBox.SelectedIndex != 0 && Accounts_ComboBox.SelectedIndex != 0 && datePicker1.SelectedDate == null && datePicker2.SelectedDate == null)
             {
                 transactions = SqliteDataAccess.LoadTransactionsByAccountNameAndCategoriesName(Accounts_ComboBox.Text, Categories_ComboBox.Text, SqliteLogin.LoggedUserId);
-                
+
                 TransactionsDatagrid.ItemsSource = transactions;
                 return;
             }
             else if (Categories_ComboBox.SelectedIndex == 0 && Accounts_ComboBox.SelectedIndex != 0)
             {
-               
+
                 transactions = SqliteDataAccess.LoadTransactionsByAccountName(Accounts_ComboBox.Text, SqliteLogin.LoggedUserId);
                 TransactionsDatagrid.ItemsSource = transactions;
                 return;
+            }
+
+            else if (datePicker1.SelectedDate != null && datePicker2.SelectedDate != null && Categories_ComboBox.SelectedIndex != 0 && Accounts_ComboBox.SelectedIndex == 0)
+            {
+                transactions = SqliteDataAccess.LoadTransactionsByDateToDateAndCategories(datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"), SqliteLogin.LoggedUserId, Categories_ComboBox.Text);
+                TransactionsDatagrid.ItemsSource = transactions;
             }
             else if (Categories_ComboBox.SelectedIndex != 0 && Accounts_ComboBox.SelectedIndex == 0)
             {
@@ -149,6 +154,28 @@ namespace Project_TAB.Views
                 TransactionsDatagrid.ItemsSource = transactions;
                 return;
             }
+            else if (datePicker1.SelectedDate == null && datePicker2.SelectedDate != null && Categories_ComboBox.SelectedIndex == 0 && Accounts_ComboBox.SelectedIndex == 0)
+            {
+                MessageBox.Show("Wybierz date Od:");
+                return;
+            }
+            else if (datePicker1.SelectedDate != null && datePicker2.SelectedDate != null && Categories_ComboBox.SelectedIndex == 0 && Accounts_ComboBox.SelectedIndex == 0)
+            {
+                transactions = SqliteDataAccess.LoadTransactionsByDateToDate(datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"), SqliteLogin.LoggedUserId);
+                TransactionsDatagrid.ItemsSource = transactions;
+                return;
+            }
+            else if (datePicker1.SelectedDate != null && datePicker2.SelectedDate != null && Categories_ComboBox.SelectedIndex != 0 && Accounts_ComboBox.SelectedIndex != 0)
+            {
+                transactions = SqliteDataAccess.LoadTransactionsByDateToDateAndCategoriesAndAccounts(datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"), SqliteLogin.LoggedUserId, Categories_ComboBox.Text, Accounts_ComboBox.Text);
+                TransactionsDatagrid.ItemsSource = transactions;
+                return;
+            }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
