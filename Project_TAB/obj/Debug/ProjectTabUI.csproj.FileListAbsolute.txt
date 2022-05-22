@@ -157,3 +157,15 @@ C:\Users\Mati\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\CategorieAddWindow
 C:\Users\Mati\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoriesWindow.baml
 C:\Users\Mati\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoryEditWindow.baml
 C:\Users\Mati\Desktop\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.csproj.CopyComplete
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountAddWindow.g.cs
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountEditWindow.g.cs
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountsWindow.g.cs
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\CategorieAddWindow.g.cs
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoriesWindow.g.cs
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoryEditWindow.g.cs
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountAddWindow.baml
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountEditWindow.baml
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountsWindow.baml
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\CategorieAddWindow.baml
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoriesWindow.baml
+D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoryEditWindow.baml

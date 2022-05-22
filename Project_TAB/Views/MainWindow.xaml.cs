@@ -70,8 +70,17 @@ namespace Project_TAB.Views
         {
             
            int transactionId = ((TransactionDatagridModel)TransactionsDatagrid.SelectedItem).Id;
-            MessageBox.Show(SqliteDataAccess.DeleteTransaction(new TransactionDatagridModel() { Id = transactionId }).ToString() + "row affected");
-            refreshTransactionsTable();
+            if (MessageBox.Show("Czy na pewno usunąć transakcję?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+            {
+                return;
+            }
+            else
+            {
+                SqliteDataAccess.DeleteTransaction(new TransactionDatagridModel() { Id = transactionId });
+                refreshTransactionsTable();
+            }
+
+            
         }
 
         private void GoToCategoriesButton_Click(object sender, RoutedEventArgs e)
