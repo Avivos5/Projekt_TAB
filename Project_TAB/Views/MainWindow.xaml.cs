@@ -177,6 +177,13 @@ namespace Project_TAB.Views
                 TransactionsDatagrid.ItemsSource = transactions;
                 return;
             }
+
+            else if (datePicker1.SelectedDate != null && datePicker2.SelectedDate != null && Categories_ComboBox.SelectedIndex != 0 && Accounts_ComboBox.SelectedIndex != 0)
+            {
+                transactions = SqliteDataAccess.LoadTransactionsByDateToDateAndCategoriesAndAccounts(datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"), SqliteLogin.LoggedUserId, Categories_ComboBox.Text, Accounts_ComboBox.Text);
+                TransactionsDatagrid.ItemsSource = transactions;
+                return;
+            }
             else if (datePicker1.SelectedDate != null && datePicker2.SelectedDate != null && Categories_ComboBox.SelectedIndex != 0 && Accounts_ComboBox.SelectedIndex != 0)
             {
                 transactions = SqliteDataAccess.LoadTransactionsByDateToDateAndCategoriesAndAccounts(datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"), SqliteLogin.LoggedUserId, Categories_ComboBox.Text, Accounts_ComboBox.Text);
