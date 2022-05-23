@@ -173,12 +173,12 @@ namespace ProjectTabLib
             }
         }
 
-        public static int DeleteTransaction(TransactionDatagridModel transactionRow)
+        public static int DeleteTransaction(int transactionId)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
 
-                var affectedRows = connection.Execute("Delete from Transactions Where Id = @Id", new { Id = transactionRow.Id });
+                var affectedRows = connection.Execute("Delete from Transactions Where Id = @Id", new { Id = transactionId });
                 return affectedRows;
             }
         }
@@ -483,6 +483,58 @@ namespace ProjectTabLib
                 }
 
 
+            }
+        }
+
+        public static void updateAccountBalanceOnEdit(int transactionId, int accountId, double amount, bool income)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var query = "select * from Transactions where id = :id";
+                var dynamicParameters = new DynamicParameters();
+                dynamicParameters.Add("id", transactionId);
+                var tranToEdit = cnn.Query<TransactionModel>(query, dynamicParameters).FirstOrDefault();
+
+                if (tranToEdit.Account_Id == accountId)
+                {
+                    double finalTransactionBalance = 0;
+
+                    if (tranToEdit.Income)
+                        finalTransactionBalance -= tranToEdit.Transaction_Amount;
+                    else
+                        finalTransactionBalance += tranToEdit.Transaction_Amount;
+
+                    if (income)
+                        finalTransactionBalance += amount;
+                    else
+                        finalTransactionBalance -= amount;
+
+                    cnn.Execute("update Accounts set balance = balance + @Amount where id = @Id", new { Id = accountId, Amount = finalTransactionBalance });
+                }
+                else
+                {
+                    if (tranToEdit.Income)
+                        cnn.Execute("update Accounts set balance = balance - @Amount where id = @Id", new { Id = tranToEdit.Account_Id, Amount = tranToEdit.Transaction_Amount });
+                    else
+                        cnn.Execute("update Accounts set balance = balance + @Amount where id = @Id", new { Id = tranToEdit.Account_Id, Amount = tranToEdit.Transaction_Amount });
+
+                    if (income)
+                        cnn.Execute("update Accounts set balance = balance + @Amount where id = @Id", new { Id = accountId, Amount = amount });
+                    else
+                        cnn.Execute("update Accounts set balance = balance - @Amount where id = @Id", new { Id = accountId, Amount = amount });
+
+                }
+            }
+        }
+
+        public static void updateAccountBalanceonDelete(int accId, double amount, bool income)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                if (income)
+                    cnn.Execute("update Accounts set balance = balance - @Amount where id = @Id", new { Id = accId, Amount = amount });
+                else
+                    cnn.Execute("update Accounts set balance = balance + @Amount where id = @Id", new { Id = accId, Amount = amount });
             }
         }
 

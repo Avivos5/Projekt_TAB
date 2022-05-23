@@ -78,19 +78,27 @@ namespace Project_TAB.Views
             }
             else
             {
+                var transaction_Amount = Convert.ToDouble(AmountInput.Text, provider);
+                var account_Id = int.Parse(AccountsComboBox.SelectedValue.ToString());
+                var income = IncomeCheckBox.IsChecked == true ? true : false;
+
+                SqliteDataAccess.updateAccountBalanceOnEdit(editTrans.Id, account_Id, transaction_Amount, income);
+
                 var updatedTransaction = new
                 {
                     Id = editTrans.Id,
                     Category_Id = int.Parse(CategoriesComboBox.SelectedValue.ToString()),
-                    Account_Id = int.Parse(AccountsComboBox.SelectedValue.ToString()),
+                    Account_Id = account_Id,
                     DateTime = TransactionDatePicker.SelectedDate.Value.ToShortDateString(),
                     Name = NameInput.Text,
-                    Transaction_Amount = Convert.ToDouble(AmountInput.Text, provider),
-                    Income = IncomeCheckBox.IsChecked == true ? true : false,
+                    Transaction_Amount = transaction_Amount,
+                    Income = income,
                     Current_Amount = 0 // To jest do zmiany!!!!
 
                 };
                 SqliteDataAccess.updateTransaction(updatedTransaction);
+
+
 
                 GoBackToMainWindow();
                 Close();

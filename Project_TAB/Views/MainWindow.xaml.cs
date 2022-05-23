@@ -40,12 +40,10 @@ namespace Project_TAB.Views
             Accounts_ComboBox.SelectedIndex = 0;
             Categories_ComboBox.SelectedIndex = 0;
 
-            WelcomeLabel.Content = $"Witaj, {SqliteLogin.LoggedUserLogin}";
-
-            totalBalance = SqliteDataAccess.countTotalBalance(SqliteLogin.LoggedUserId);
-            TotalBalance.Content = $"Główny Balans: {totalBalance} (zł)";
+            WelcomeLabel.Content = $"Witaj, {SqliteLogin.LoggedUserLogin}"; 
 
             refreshTransactionsTable();
+            refreshTotalBalance();
             
         }
 
@@ -64,20 +62,34 @@ namespace Project_TAB.Views
             TransactionsDatagrid.ItemsSource = transactions;
 
         }
+        
+        public void refreshTotalBalance()
+        {
+            totalBalance = SqliteDataAccess.countTotalBalance(SqliteLogin.LoggedUserId);
+            TotalBalance.Content = $"Główny Balans: {Math.Round(totalBalance, 2)} (zł)";
+        }
+
+        
 
 
         public void Delete_Click(object sender, RoutedEventArgs e)
         {
             
-           int transactionId = ((TransactionDatagridModel)TransactionsDatagrid.SelectedItem).Id;
+            int transactionId = ((TransactionDatagridModel)TransactionsDatagrid.SelectedItem).Id;
+            double transactionAmount = ((TransactionDatagridModel)TransactionsDatagrid.SelectedItem).Transaction_Amount;
+            int transactionAccountId = ((TransactionDatagridModel)TransactionsDatagrid.SelectedItem).Account_Id;
+            bool transactionIsIncome = ((TransactionDatagridModel)TransactionsDatagrid.SelectedItem).Income;
+
             if (MessageBox.Show("Czy na pewno usunąć transakcję?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
             {
                 return;
             }
             else
             {
-                SqliteDataAccess.DeleteTransaction(new TransactionDatagridModel() { Id = transactionId });
+                SqliteDataAccess.DeleteTransaction(transactionId);
+                SqliteDataAccess.updateAccountBalanceonDelete(transactionAccountId, transactionAmount, transactionIsIncome);
                 refreshTransactionsTable();
+                refreshTotalBalance();
             }
 
             
