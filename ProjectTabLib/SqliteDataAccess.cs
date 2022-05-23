@@ -462,6 +462,30 @@ namespace ProjectTabLib
             }
         }
 
+        public static void updateAccountBalance(int id, double amount, bool income)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+
+                var accBalanceUpdate = new
+                {
+                    Id = id,
+                    Amount = amount,
+                };
+
+                if (income == true)
+                {
+                    cnn.Execute("update Accounts set balance = balance + @Amount where id = @Id", accBalanceUpdate);
+                }
+                else
+                {
+                    cnn.Execute("update Accounts set balance = balance - @Amount where id = @Id", accBalanceUpdate);
+                }
+
+
+            }
+        }
+
         //Balance-------------
 
         public static double countTotalBalance(int userId)
