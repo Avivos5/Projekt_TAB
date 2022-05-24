@@ -141,11 +141,19 @@
             SelectedValuePath="Id" Grid.ColumnSpan="2" />
         <Button
             Width="75"
-            Margin="29,357,0,0"
+            Margin="29,335,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="Button_Click"
+            Click="FilterButton_Click"
             Content="Filtruj" Grid.ColumnSpan="2" />
+
+        <Button
+            Width="75"
+            Margin="29,365,0,10"
+            HorizontalAlignment="Left"
+            Click="ResetFilterButton_Click"
+            Content="Resetuj" Grid.ColumnSpan="2" />
+
         <Label
             Margin="29,55,0,0"
             HorizontalAlignment="Left"
@@ -156,6 +164,7 @@
         <Label Content="Do&#xD;&#xA;" HorizontalAlignment="Left" Margin="19,268,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="datePicker1" HorizontalAlignment="Left" Margin="19,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.096,0.21" Grid.ColumnSpan="2"/>
         <DatePicker x:Name="datePicker2" HorizontalAlignment="Left" Margin="19,302,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
 
 
 

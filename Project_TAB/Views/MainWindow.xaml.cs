@@ -133,7 +133,7 @@ namespace Project_TAB.Views
             Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void FilterButton_Click(object sender, RoutedEventArgs e)
         {
             if (datePicker1.SelectedDate == null && datePicker2.SelectedDate == null && Categories_ComboBox.SelectedIndex == 0 && Accounts_ComboBox.SelectedIndex == 0)
             {
@@ -190,6 +190,18 @@ namespace Project_TAB.Views
                 TransactionsDatagrid.ItemsSource = transactions;
                 return;
             }
+        }
+
+        private void ResetFilterButton_Click(object sender, RoutedEventArgs e)
+        {
+            datePicker1.SelectedDate = null;
+            datePicker2.SelectedDate = null;
+            Categories_ComboBox.SelectedIndex = 0;
+            Accounts_ComboBox.SelectedIndex = 0;
+
+
+
+            refreshTransactionsTable();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

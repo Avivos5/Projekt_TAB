@@ -94,7 +94,7 @@ namespace ProjectTabLib
                     dateTwo = dateTwo,
                 };
 
-                string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where  (Transactions.user_id = 7 AND datetime BETWEEN @dateOne and @dateTwo)";
+                string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where  (Transactions.user_id = @Id AND datetime BETWEEN @dateOne and @dateTwo)";
                 var output = cnn.Query<TransactionDatagridModel>(sql, p);
 
                 return output.ToList();
