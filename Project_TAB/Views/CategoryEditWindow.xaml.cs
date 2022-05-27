@@ -55,7 +55,6 @@ namespace Project_TAB.Views
                 };
                 SqliteDataAccess.updateCategory(updatedCategory);
 
-                GoBackToCategoriesWindow();
                 Close();
             }
         }

@@ -71,8 +71,6 @@ namespace Project_TAB.Views
 
                 SqliteDataAccess.updateAccountBalance(account_Id, transaction_Amount, income);
 
-
-                GoBackToMainWindow();
                 Close();
             }
         }

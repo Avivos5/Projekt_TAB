@@ -55,7 +55,6 @@ namespace Project_TAB.Views
                 };
                 SqliteDataAccess.updateAccount(updatedAccount);
 
-                GoBackToAccountssWindow();
                 Close();
             }
         }

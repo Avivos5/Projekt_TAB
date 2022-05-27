@@ -98,9 +98,6 @@ namespace Project_TAB.Views
                 };
                 SqliteDataAccess.updateTransaction(updatedTransaction);
 
-
-
-                GoBackToMainWindow();
                 Close();
             }
         }

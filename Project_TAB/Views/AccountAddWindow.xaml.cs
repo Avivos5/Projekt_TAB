@@ -57,7 +57,6 @@ namespace Project_TAB.Views
                 };
                 SqliteDataAccess.addAccount(newAccount);
 
-                GoBackToAccountssWindow();
                 Close();
             }
         }

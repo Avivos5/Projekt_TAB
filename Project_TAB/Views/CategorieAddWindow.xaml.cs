@@ -46,7 +46,6 @@ namespace Project_TAB.Views
                 };
                 SqliteDataAccess.addCategorie(newCategorie);
 
-                GoBackToCategoriesWindow();
                 Close();
             }
         }
