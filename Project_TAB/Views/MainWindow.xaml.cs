@@ -208,5 +208,12 @@ namespace Project_TAB.Views
         {
 
         }
+
+        private void GoToRaport(object sender, RoutedEventArgs e)
+        {
+            RaportWindow raportwindow = new RaportWindow();
+            raportwindow.Show();
+            Close();
+        }
     }
 }

@@ -1,0 +1,40 @@
+﻿<Window x:Class="Project_TAB.Views.RaportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_TAB.Views"
+        mc:Ignorable="d"
+        Title="RaportWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid
+            x:Name="CategoriesDatagrid"
+            Margin="10,10,430,66"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False" SelectionChanged="CategoriesDatagrid_SelectionChanged">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Status}" Value="true">
+                            <Setter Property="Background" Value="#fff" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Status}" Value="false">
+                            <Setter Property="Background" Value="#aaa" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Category_Name}" Header="Nazwa" />
+
+                <DataGridCheckBoxColumn Header="Uzyj" IsThreeState="False"  Binding="{Binding Category_Selected}"  />
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="380,60,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Select All" HorizontalAlignment="Left" Margin="380,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Deselect All" HorizontalAlignment="Left" Margin="380,35,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
+    </Grid>
+</Window>

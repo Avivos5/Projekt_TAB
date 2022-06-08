@@ -35,15 +35,15 @@
 
         <Button
             Width="106"
-            Margin="284,10,0,0"
+            Margin="268,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="AddButton_Click"
             Content="Dodaj Transakcje" Grid.Column="1" />
 
         <Button
-            Width="75"
-            Margin="413,10,0,0"
+            Width="74"
+            Margin="379,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="GoToCategoriesButton_Click"
@@ -51,7 +51,7 @@
 
         <Button
             Width="75"
-            Margin="510,10,0,0"
+            Margin="458,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="GoToAccountsButton_Click"
@@ -59,7 +59,7 @@
 
         <Button
             Width="75"
-            Margin="615,10,0,0"
+            Margin="617,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="LogoutButton_Click"
@@ -164,6 +164,7 @@
         <Label Content="Do&#xD;&#xA;" HorizontalAlignment="Left" Margin="19,268,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="datePicker1" HorizontalAlignment="Left" Margin="19,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.096,0.21" Grid.ColumnSpan="2"/>
         <DatePicker x:Name="datePicker2" HorizontalAlignment="Left" Margin="19,302,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button Content="Raport" Grid.Column="1" HorizontalAlignment="Left" Margin="538,10,0,0" VerticalAlignment="Top" Width="74" Click="GoToRaport"/>
 
 
 

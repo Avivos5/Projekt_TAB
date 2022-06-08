@@ -96,5 +96,9 @@ namespace Project_TAB.Views
             Close();
         }
 
+        private void CategoriesDatagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
