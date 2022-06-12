@@ -172,6 +172,7 @@ C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\bin\Debug\DataBase.db
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\bin\Debug\Project_TAB.exe.config
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\bin\Debug\Project_TAB.exe
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\bin\Debug\Project_TAB.pdb
+C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\bin\Debug\OpenHtmlToPdf.dll
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\bin\Debug\ProjectTabLib.dll
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\bin\Debug\System.Data.SQLite.dll
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\bin\Debug\Dapper.dll
@@ -186,6 +187,7 @@ C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\Categori
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoriesWindow.g.cs
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoryEditWindow.g.cs
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\MainWindow.g.cs
+C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\RaportWindow.g.cs
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\TransactionAddWindow.g.cs
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\TransactionEditWindow.g.cs
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\UserLogin.g.cs
@@ -201,6 +203,7 @@ C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\Categori
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoriesWindow.baml
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\CategoryEditWindow.baml
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\MainWindow.baml
+C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\RaportWindow.baml
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\TransactionAddWindow.baml
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\TransactionEditWindow.baml
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\UserLogin.baml
@@ -212,5 +215,3 @@ C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.c
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.csproj.CopyComplete
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Project_TAB.exe
 C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Project_TAB.pdb
-C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\RaportWindow.g.cs
-C:\Users\Sylay\Documents\GitHub\Projekt_TAB\Project_TAB\obj\Debug\Views\RaportWindow.baml

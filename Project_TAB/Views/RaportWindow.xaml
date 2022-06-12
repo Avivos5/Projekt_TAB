@@ -5,13 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_TAB.Views"
         mc:Ignorable="d"
+        Closing="Window_Closing"
         Title="RaportWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="689*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
         <DataGrid
             x:Name="CategoriesDatagrid"
-            Margin="10,10,430,66"
+            Margin="10,32,422,44"
             AutoGenerateColumns="False"
-            CanUserAddRows="False" SelectionChanged="CategoriesDatagrid_SelectionChanged">
+            CanUserAddRows="False" SelectionChanged="CategoriesDatagrid_SelectionChanged" Grid.ColumnSpan="2">
             <DataGrid.RowStyle>
                 <Style TargetType="{x:Type DataGridRow}">
                     <Style.Triggers>
@@ -29,12 +35,48 @@
                 <DataGridTextColumn Binding="{Binding Category_Name}" Header="Nazwa" />
 
                 <DataGridCheckBoxColumn Header="Uzyj" IsThreeState="False"  Binding="{Binding Category_Selected}"  />
-                
+
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="380,60,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Select All" HorizontalAlignment="Left" Margin="380,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Deselect All" HorizontalAlignment="Left" Margin="380,35,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Generuj" HorizontalAlignment="Left" Margin="279,72,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click" RenderTransformOrigin="-1.26,-1.725" Grid.Column="1"/>
+        <Button Content="Select All" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Deselect All" HorizontalAlignment="Left" Margin="90,7,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2" RenderTransformOrigin="-2.96,-2.575" Grid.ColumnSpan="2"/>
+        <Label
+            Margin="279,5,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Początek&#xD;&#xA;" Width="92" Height="28" Grid.Column="1" />
+        <DatePicker
+            x:Name="datePicker1"
+            Width="120"
+            Margin="279,33,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" Grid.Column="1" />
+        <Label
+            Margin="404,7,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Koniec" Width="115" Grid.Column="1" />
+        <DatePicker
+            x:Name="datePicker2"
+            Width="120"
+            Margin="404,33,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" Grid.Column="1" />
+        <Label
+            Margin="540,7,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Konto" Grid.Column="1" />
+        <ComboBox
+            x:Name="Accounts_ComboBox"
+            Width="120"
+            Margin="540,35,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="Account_Name"
+            ItemsSource="{Binding userAccounts}"
+            SelectedValuePath="Id" Grid.Column="1" />
 
     </Grid>
 </Window>

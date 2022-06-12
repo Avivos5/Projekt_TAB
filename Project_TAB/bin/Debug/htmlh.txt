@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body {
+  font:Arial;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: -12;
+}
+p {
+  color: #c7c7c7;
+}
+div{
+width: 175px;
+}
+b{
+  font-size: 30;
+}
+.xd{
+  font-size: 15;
+}
+</style>
+<head>
+<link rel="stylesheet" href="index.css">
+</head>
+
+<body>

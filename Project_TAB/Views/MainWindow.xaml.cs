@@ -40,7 +40,7 @@ namespace Project_TAB.Views
             Accounts_ComboBox.SelectedIndex = 0;
             Categories_ComboBox.SelectedIndex = 0;
 
-            WelcomeLabel.Content = $"Witaj, {SqliteLogin.LoggedUserLogin}"; 
+            WelcomeLabel.Content = $"Witaj, {SqliteLogin.LoggedUserLogin}";
 
             refreshTransactionsTable();
             refreshTotalBalance();
