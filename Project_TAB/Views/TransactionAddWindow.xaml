@@ -11,7 +11,7 @@
     Closing="TransactionAddWindow_Closing"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid>
+    <Grid Background="#F2B413">
         <Label
             Margin="109,22,0,0"
             HorizontalAlignment="Left"
@@ -26,6 +26,7 @@
             VerticalAlignment="Top"
             Content="Nazwa" />
         <TextBox
+            Background="#F8D347"
             Name="NameInput"
             Width="120"
             Height="23"
@@ -40,6 +41,7 @@
             VerticalAlignment="Top"
             Content="Kwota" />
         <TextBox
+            Background="#F8D347"
             Name="AmountInput"
             Width="120"
             Height="23"
@@ -64,8 +66,10 @@
             Margin="146,244,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            
             Content="Konto" />
         <ComboBox
+            Background="#F8D347"
             Name="AccountsComboBox"
             Width="120"
             Margin="146,270,0,0"
@@ -98,6 +102,7 @@
             Content="Wpływ na konto" />
 
         <Button
+            Background="#F8D347"
             Width="75"
             Margin="166,424,0,0"
             HorizontalAlignment="Left"

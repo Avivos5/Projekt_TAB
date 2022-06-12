@@ -208,5 +208,10 @@ namespace Project_TAB.Views
         {
 
         }
+
+        private void TransactionsDatagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
