@@ -40,7 +40,7 @@ namespace Project_TAB.Views
             Accounts_ComboBox.SelectedIndex = 0;
             Categories_ComboBox.SelectedIndex = 0;
 
-            WelcomeLabel.Content = $"Witaj, {SqliteLogin.LoggedUserLogin}"; 
+            WelcomeLabel.Content = $"Witaj, {SqliteLogin.LoggedUserLogin}";
 
             refreshTransactionsTable();
             refreshTotalBalance();
@@ -209,9 +209,11 @@ namespace Project_TAB.Views
 
         }
 
-        private void TransactionsDatagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void GoToRaport(object sender, RoutedEventArgs e)
         {
-
+            RaportWindow raportwindow = new RaportWindow();
+            raportwindow.Show();
+            Close();
         }
     }
 }

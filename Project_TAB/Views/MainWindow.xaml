@@ -11,93 +11,68 @@
     Height="450"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid Background="#F2B413" >
-
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="9*"/>
-            <ColumnDefinition Width="83*"/>
-            <ColumnDefinition Width="18*"/>
-            <ColumnDefinition Width="55*"/>
-            <ColumnDefinition Width="82*"/>
-            <ColumnDefinition Width="42*"/>
-            <ColumnDefinition Width="71*"/>
-            <ColumnDefinition Width="440*"/>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="177*"/>
         </Grid.ColumnDefinitions>
 
-        <Button
-
-
-            Width="45"
-            Height="68"
-            
-            BorderThickness="0"
-            
-            VerticalAlignment="Top"
-            HorizontalAlignment="Right"
-            Background="Transparent"
-            
-            Click="LogoutButton_Click" Grid.Column="7" BorderBrush="White"
-            >
-            <StackPanel>
-                <Image Source="\Views\logout.png" Stretch="Fill" Height="33" Width="37" ></Image>
-            </StackPanel>
-
-        </Button>
-
         <Label
-            x:Name="WelcomeLabel"
-            Margin="10,6,0,0"
+            Name="WelcomeLabel"
+            Margin="19,6,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Witaj, *UserName*"
-            FontWeight="Bold" Grid.ColumnSpan="3" Grid.Column="1" />
+            FontWeight="Bold" Grid.ColumnSpan="2" />
 
         <Label
-            x:Name="TotalBalance"
-            Margin="51,6,0,0"
+            Name="TotalBalance"
+            Margin="69,6,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Główny Balans: XXXX (zł)"
-            FontWeight="Bold" Grid.Column="3" Grid.ColumnSpan="4" />
+            FontWeight="Bold" Grid.Column="1" />
 
         <Button
             Width="106"
-            Margin="33,24,0,0"
+            Margin="268,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#F3B03D"
             Click="AddButton_Click"
-            Content="Dodaj Transakcje" Grid.Column="7" />
+            Content="Dodaj Transakcje" Grid.Column="1" />
 
         <Button
-            Width="75"
-            Margin="180,24,0,0"
+            Width="74"
+            Margin="379,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#F3B03D"
             Click="GoToCategoriesButton_Click"
-            Content="Kategorie" Grid.Column="7" />
+            Content="Kategorie" Grid.Column="1" />
 
         <Button
             Width="75"
-            Margin="292,24,0,0"
+            Margin="458,10,0,0"
             HorizontalAlignment="Left"
-            Background="#F3B03D"
             VerticalAlignment="Top"
             Click="GoToAccountsButton_Click"
-            Content="Konta" Grid.Column="7" />
+            Content="Konta" Grid.Column="1" />
 
-
+        <Button
+            Width="75"
+            Margin="617,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="LogoutButton_Click"
+            Content="Wyloguj" Grid.Column="1" />
 
 
         <DataGrid
-            Background="#F2B413"
             x:Name="TransactionsDatagrid"
-            Margin="22,68,0,0"
+            Margin="40,37,0,0"
             AutoGenerateColumns="False"
-            CanUserAddRows="False" Grid.Column="3" Grid.ColumnSpan="5" SelectionChanged="TransactionsDatagrid_SelectionChanged">
+            CanUserAddRows="False" Grid.Column="1">
             <DataGrid.RowStyle>
-                <Style TargetType="{x:Type DataGridRow}">
+                <Style TargetType="DataGridRow">
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Income}" Value="false">
                             <Setter Property="Background" Value="#f7bbb7" />
@@ -110,11 +85,11 @@
             </DataGrid.RowStyle>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding DateTime}" Header="Data" />
-                <DataGridTextColumn Binding="{Binding Name}" Header="Nazwa" />
-                <DataGridTextColumn Binding="{Binding Category_Name}" Header="Kategoria" />
-                <DataGridTextColumn Binding="{Binding Account_Name}" Header="Konto" />
-                <DataGridTextColumn Binding="{Binding Transaction_Amount}" Header="Wartość transakcji (zł)" />
+                <DataGridTextColumn Binding="{Binding Path=DateTime}" Header="Data" />
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Nazwa" />
+                <DataGridTextColumn Binding="{Binding Path=Category_Name}" Header="Kategoria" />
+                <DataGridTextColumn Binding="{Binding Path=Account_Name}" Header="Konto" />
+                <DataGridTextColumn Binding="{Binding Path=Transaction_Amount}" Header="Wartość transakcji (zł)" />
                 <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -135,62 +110,61 @@
 
         <Label
             Width="108"
-            Margin="10,86,0,0"
+            Margin="19,86,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Kategorie" Grid.ColumnSpan="3" Grid.Column="1" />
+            Content="Kategorie" Grid.ColumnSpan="2" />
         <ComboBox
-            x:Name="Categories_ComboBox"
+            Name="Categories_ComboBox"
             Width="103"
-            Margin="10,117,0,0"
+            Margin="19,117,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="Category_Name"
             ItemsSource="{Binding userCategories}"
-            SelectedValuePath="Id" Grid.ColumnSpan="3" Grid.Column="1"
-            Background="#F3B03D"/>
+            SelectedValuePath="Id" Grid.ColumnSpan="2" />
 
         <Label
             Width="79"
-            Margin="10,144,0,0"
+            Margin="19,144,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Konto" Grid.ColumnSpan="2" Grid.Column="1" />
+            Content="Konto" Grid.ColumnSpan="2" />
         <ComboBox
-            x:Name="Accounts_ComboBox"
+            Name="Accounts_ComboBox"
             Width="103"
-            Margin="10,170,0,0"
+            Margin="19,170,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="Account_Name"
             ItemsSource="{Binding userAccounts}"
-            SelectedValuePath="Id" Grid.ColumnSpan="3" Grid.Column="1" />
+            SelectedValuePath="Id" Grid.ColumnSpan="2" />
         <Button
             Width="75"
-            Margin="20,335,0,0"
+            Margin="29,335,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#F3B03D"
             Click="FilterButton_Click"
-            Content="Filtruj" Grid.ColumnSpan="2" Grid.Column="1" />
+            Content="Filtruj" Grid.ColumnSpan="2" />
 
         <Button
             Width="75"
-            Margin="20,365,0,10"
+            Margin="29,365,0,10"
             HorizontalAlignment="Left"
             Click="ResetFilterButton_Click"
-            Content="Resetuj" Grid.ColumnSpan="2" Grid.Column="1" 
-            Background="#F3B03D"/>
+            Content="Resetuj" Grid.ColumnSpan="2" />
 
         <Label
-            Margin="20,55,0,0"
+            Margin="29,55,0,0"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="FILTRACJA"
-            FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="1" />
-        <Label Content="Od&#xA;" HorizontalAlignment="Left" Margin="9,202,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label Content="Do&#xA;" HorizontalAlignment="Left" Margin="10,268,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <DatePicker x:Name="datePicker1" Background="#F3B03D" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.096,0.21" Grid.ColumnSpan="3" Grid.Column="1"/>
-        <DatePicker x:Name="datePicker2"  Background="#F3B03D" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1"/>
+            FontWeight="Bold" Grid.ColumnSpan="2" />
+        <Label Content="Od&#xD;&#xA;" HorizontalAlignment="Left" Margin="18,202,0,0" VerticalAlignment="Top"/>
+        <Label Content="Do&#xD;&#xA;" HorizontalAlignment="Left" Margin="19,268,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="datePicker1" HorizontalAlignment="Left" Margin="19,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.096,0.21" Grid.ColumnSpan="2"/>
+        <DatePicker x:Name="datePicker2" HorizontalAlignment="Left" Margin="19,302,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button Content="Raport" Grid.Column="1" HorizontalAlignment="Left" Margin="538,10,0,0" VerticalAlignment="Top" Width="74" Click="GoToRaport"/>
 
 
 

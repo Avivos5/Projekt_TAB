@@ -23,7 +23,7 @@
             x:Name="CategoriesDatagrid"
             Margin="0,76,440,0"
             AutoGenerateColumns="False"
-            CanUserAddRows="False">
+            CanUserAddRows="False" SelectionChanged="CategoriesDatagrid_SelectionChanged">
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
                     <Style.Triggers>

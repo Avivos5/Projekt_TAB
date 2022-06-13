@@ -1,0 +1,22 @@
+  <h1>RAPORT</h1>
+  <h2>Zyski i wydatki</h2>
+  <p>od yyyy-MM-dd do yyyy-MM-dd</p>
+  <hr size="" width="" color="">  
+  <b>konto XXXXXXXXX  BILANS 2137PLN</b>
+  <hr size="" width="" color="">  
+  <b class = "xd"> &ensp; zyski</b>
+  <hr size="" width="" color="">  
+  &ensp;&ensp;transport <b class = "xd">+100PLN</b>
+    <hr size="" width="" color="">  
+  &ensp;&ensp;bauty +100PLN
+    <hr size="" width="" color="">  
+  &ensp;&ensp;transport +100PLN
+    <hr size="" width="" color="">  
+  <b class = "xd"> &ensp; wydatki</b>
+    <hr size="" width="" color="">  
+  &ensp;&ensp;transport <b class = "xd">-100PLN</b>
+    <hr size="" width="" color="">  
+  &ensp;&ensp;bauty -100PLN
+    <hr size="" width="" color="">  
+  &ensp;&ensp;transport -100PLN
+    <hr size="" width="" color="">  
