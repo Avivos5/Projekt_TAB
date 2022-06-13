@@ -70,5 +70,9 @@ namespace Project_TAB.Views
             GoBackToAccountssWindow();
         }
 
+        private void NameInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -11,7 +11,8 @@
     Closing="AccountAddWindow_Closing"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid>
+    <Grid 
+        Background="#F2B413">
         <Label
             Margin="127,22,0,0"
             HorizontalAlignment="Left"
@@ -27,6 +28,7 @@
             VerticalAlignment="Top"
             Content="Nazwa" />
         <TextBox
+            Background="#F8D347"
             Name="NameInput"
             Width="120"
             Height="23"
@@ -41,6 +43,7 @@
             VerticalAlignment="Top"
             Content="Początkowy bilans" />
         <TextBox
+            Background="#F8D347"
             x:Name="BalanceInput"
             Width="120"
             Height="23"
@@ -58,6 +61,7 @@
             Content="Aktywny" />
 
         <Button
+            Background="#F8D347"
             Width="75"
             Margin="168,255,0,0"
             HorizontalAlignment="Left"

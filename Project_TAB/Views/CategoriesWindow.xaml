@@ -10,8 +10,7 @@
     Height="450"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid>
-
+    <Grid Background="#F2B413">
         <Label
             Margin="94,45,0,0"
             HorizontalAlignment="Left"
@@ -20,6 +19,7 @@
             FontWeight="Bold" />
 
         <DataGrid
+            
             x:Name="CategoriesDatagrid"
             Margin="0,76,440,0"
             AutoGenerateColumns="False"
@@ -97,6 +97,7 @@
             Content="Kategorie"
             FontWeight="Bold" />
         <Button
+            Background="#F8D347"
             Width="106"
             Margin="212,10,0,0"
             HorizontalAlignment="Left"
@@ -106,6 +107,7 @@
 
 
         <Button
+            Background="#F8D347"
             Width="75"
             Margin="454,10,0,0"
             HorizontalAlignment="Left"
@@ -114,6 +116,7 @@
             Content="Transakcje" />
 
         <Button
+            Background="#F8D347"
             Width="75"
             Margin="707,10,0,0"
             HorizontalAlignment="Left"
