@@ -26,7 +26,7 @@
             VerticalAlignment="Top"
             Content="Nazwa" />
         <TextBox
-            Background="#F8D347"
+            
             Name="NameInput"
             Width="120"
             Height="23"
@@ -41,7 +41,7 @@
             VerticalAlignment="Top"
             Content="Kwota" />
         <TextBox
-            Background="#F8D347"
+            
             Name="AmountInput"
             Width="120"
             Height="23"
@@ -102,6 +102,7 @@
             Content="Wpływ na konto" />
 
         <Button
+            Style="{DynamicResource ButtonStyle}"
             Background="#F8D347"
             Width="75"
             Margin="166,424,0,0"

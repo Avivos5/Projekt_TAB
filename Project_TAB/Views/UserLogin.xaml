@@ -14,16 +14,16 @@
 
 
         <Label Content="Login" HorizontalAlignment="Left" Margin="146,145,0,0" VerticalAlignment="Top"/>
-        <TextBox Background="#F8D347" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="146,171,0,0" Name="LoginInput"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="146,171,0,0" Name="LoginInput"/>
 
         <Label Content="Hasło" HorizontalAlignment="Left" Margin="146,215,0,0" VerticalAlignment="Top"/>
-        <PasswordBox Background="#F8D347" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="120" Margin="146,241,0,0" Name="PassowordInput"/>
+        <PasswordBox  HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="120" Margin="146,241,0,0" Name="PassowordInput"/>
 
 
-        <Button Background="#F8D347"  Content="Zaloguj" HorizontalAlignment="Left" Margin="168,309,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Style="{DynamicResource ButtonStyle}" Background="#F8D347"  Content="Zaloguj" HorizontalAlignment="Left" Margin="168,309,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
         <Label Content="Nie masz konta?" HorizontalAlignment="Left" Margin="106,359,0,0" VerticalAlignment="Top"/>
-        <Button Background="#F8D347"  Content="Zarejestruj się" Click="Go_Register_Click" HorizontalAlignment="Left" Margin="208,360,0,0" VerticalAlignment="Top" Width="108" Padding="3"/>
+        <Button Style="{DynamicResource ButtonStyle}" Background="#F8D347"  Content="Zarejestruj się" Click="Go_Register_Click" HorizontalAlignment="Left" Margin="208,360,0,0" VerticalAlignment="Top" Width="108" Padding="3"/>
 
     </Grid>
 </Window>

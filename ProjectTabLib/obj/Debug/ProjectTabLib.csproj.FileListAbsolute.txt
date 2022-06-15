@@ -42,3 +42,7 @@ D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.CoreCompi
 D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.csproj.CopyComplete
 D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.dll
 D:\ProjektTAB\Projekt_TAB\ProjectTabLib\obj\Debug\ProjectTabLib.pdb
+C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\itextsharp.dll
+C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\OpenHtmlToPdf.dll
+C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\itextsharp.xml

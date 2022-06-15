@@ -168,3 +168,13 @@ D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.csproj.CoreCompileI
 D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\ProjectTabUI.csproj.CopyComplete
 D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Project_TAB.exe
 D:\ProjektTAB\Projekt_TAB\Project_TAB\obj\Debug\Project_TAB.pdb
+C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\bin\Debug\OpenHtmlToPdf.dll
+C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountAddWindow.g.cs
+C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountEditWindow.g.cs
+C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountsWindow.g.cs
+C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\RaportWindow.g.cs
+C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountAddWindow.baml
+C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountEditWindow.baml
+C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountsWindow.baml
+C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\RaportWindow.baml
+C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\App.baml

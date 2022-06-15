@@ -28,7 +28,7 @@
             VerticalAlignment="Top"
             Content="Nazwa" />
         <TextBox
-            Background="#F8D347"
+            
             Name="NameInput"
             Width="120"
             Height="23"
@@ -43,7 +43,7 @@
             VerticalAlignment="Top"
             Content="Początkowy bilans" />
         <TextBox
-            Background="#F8D347"
+            
             x:Name="BalanceInput"
             Width="120"
             Height="23"
@@ -61,6 +61,7 @@
             Content="Aktywny" />
 
         <Button
+            Style="{DynamicResource ButtonStyle}"
             Background="#F8D347"
             Width="75"
             Margin="168,255,0,0"

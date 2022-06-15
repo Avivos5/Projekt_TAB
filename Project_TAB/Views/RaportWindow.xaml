@@ -7,13 +7,14 @@
         mc:Ignorable="d"
         Closing="Window_Closing"
         Title="RaportWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#F2B413">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="95*"/>
             <ColumnDefinition Width="689*"/>
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <DataGrid
+            IsReadOnly="True"
             x:Name="CategoriesDatagrid"
             Margin="10,32,422,44"
             AutoGenerateColumns="False"
@@ -38,9 +39,9 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Generuj" HorizontalAlignment="Left" Margin="279,72,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click" RenderTransformOrigin="-1.26,-1.725" Grid.Column="1"/>
-        <Button Content="Select All" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button Content="Deselect All" HorizontalAlignment="Left" Margin="90,7,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2" RenderTransformOrigin="-2.96,-2.575" Grid.ColumnSpan="2"/>
+        <Button Style="{DynamicResource ButtonStyle}" Background="#F8D347" Content="Generuj" HorizontalAlignment="Left" Margin="279,72,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click" RenderTransformOrigin="-1.26,-1.725" Grid.Column="1"/>
+        <Button Style="{DynamicResource ButtonStyle}" Background="#F8D347" Content="Zaznacz wszystko" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="107" Click="Button_Click_1" Grid.ColumnSpan="2"/>
+        <Button Style="{DynamicResource ButtonStyle}" Background="#F8D347" Content="Odznacz wszystko" HorizontalAlignment="Left" Margin="27,7,0,0" VerticalAlignment="Top" Width="107" Click="Button_Click_2" RenderTransformOrigin="-2.96,-2.575" Grid.Column="1"/>
         <Label
             Margin="279,5,0,0"
             HorizontalAlignment="Left"

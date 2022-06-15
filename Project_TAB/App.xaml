@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:Project_TAB"
              StartupUri="Views/UserLogin.xaml">
     <Application.Resources>
-         
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5" />
+                </Style>
+            </Style.Resources>
+        </Style>
     </Application.Resources>
 </Application>

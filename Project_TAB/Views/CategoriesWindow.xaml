@@ -19,7 +19,7 @@
             FontWeight="Bold" />
 
         <DataGrid
-            
+             IsReadOnly="True"
             x:Name="CategoriesDatagrid"
             Margin="0,76,440,0"
             AutoGenerateColumns="False"
@@ -59,6 +59,7 @@
             FontWeight="Bold" />
 
         <DataGrid
+             IsReadOnly="True"
             x:Name="InactiveCategoriesDatagrid"
             Margin="440,76,0,0"
             AutoGenerateColumns="False"
@@ -97,6 +98,7 @@
             Content="Kategorie"
             FontWeight="Bold" />
         <Button
+            Style="{DynamicResource ButtonStyle}"
             Background="#F8D347"
             Width="106"
             Margin="212,10,0,0"
@@ -107,6 +109,7 @@
 
 
         <Button
+            Style="{DynamicResource ButtonStyle}"
             Background="#F8D347"
             Width="75"
             Margin="454,10,0,0"
@@ -116,6 +119,7 @@
             Content="Transakcje" />
 
         <Button
+            Style="{DynamicResource ButtonStyle}"
             Background="#F8D347"
             Width="75"
             Margin="707,10,0,0"

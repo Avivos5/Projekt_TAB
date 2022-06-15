@@ -27,7 +27,7 @@
             VerticalAlignment="Top"
             Content="Nazwa" />
         <TextBox
-            Background="#F8D347"
+            
             Name="NameInput"
             Width="120"
             Height="23"
@@ -44,6 +44,7 @@
             Content="Aktywny" />
 
         <Button
+            Style="{DynamicResource ButtonStyle}"
             Background="#F8D347"
             Width="75"
             Margin="166,255,0,0"
