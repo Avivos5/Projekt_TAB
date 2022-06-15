@@ -46,3 +46,7 @@ C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\BouncyCastle.Crypto.dl
 C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\itextsharp.dll
 C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\OpenHtmlToPdf.dll
 C:\Users\Arek\Desktop\Projekt_TAB\ProjectTabLib\bin\Debug\itextsharp.xml
+C:\Users\Mati\Desktop\Project_TAB\ProjectTabLib\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Mati\Desktop\Project_TAB\ProjectTabLib\bin\Debug\itextsharp.dll
+C:\Users\Mati\Desktop\Project_TAB\ProjectTabLib\bin\Debug\OpenHtmlToPdf.dll
+C:\Users\Mati\Desktop\Project_TAB\ProjectTabLib\bin\Debug\itextsharp.xml

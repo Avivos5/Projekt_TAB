@@ -178,3 +178,7 @@ C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountEditWindow.
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\AccountsWindow.baml
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\Views\RaportWindow.baml
 C:\Users\Arek\Desktop\Projekt_TAB\Project_TAB\obj\Debug\App.baml
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\bin\Debug\OpenHtmlToPdf.dll
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\RaportWindow.g.cs
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\App.baml
+C:\Users\Mati\Desktop\Project_TAB\Project_TAB\obj\Debug\Views\RaportWindow.baml
