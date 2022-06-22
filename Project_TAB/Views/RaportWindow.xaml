@@ -12,6 +12,10 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Background="#F2B413">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="365*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="95*" />
             <ColumnDefinition Width="689*" />
@@ -19,22 +23,13 @@
         </Grid.ColumnDefinitions>
         <DataGrid
             x:Name="CategoriesDatagrid"
-            Grid.ColumnSpan="2"
-            Margin="10,32,422,44"
+            Margin="10,48,672,44"
             AutoGenerateColumns="False"
             CanUserAddRows="False"
-            IsReadOnly="True"
-            SelectionChanged="CategoriesDatagrid_SelectionChanged">
+            SelectionChanged="CategoriesDatagrid_SelectionChanged" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <DataGrid.RowStyle>
                 <Style TargetType="{x:Type DataGridRow}">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Status}" Value="true">
-                            <Setter Property="Background" Value="#fff" />
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding Status}" Value="false">
-                            <Setter Property="Background" Value="#aaa" />
-                        </DataTrigger>
-                    </Style.Triggers>
+                    
                 </Style>
             </DataGrid.RowStyle>
 
@@ -51,35 +46,33 @@
         <Button
             Grid.Column="1"
             Width="102"
-            Margin="279,72,0,0"
+            Margin="279,18,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#F8D347"
             Click="Button_Click"
             Content="Generuj"
             RenderTransformOrigin="-1.26,-1.725"
-            Style="{DynamicResource ButtonStyle}" />
+            Style="{DynamicResource ButtonStyle}" Grid.Row="1" />
         <Button
-            Grid.ColumnSpan="2"
-            Width="107"
-            Margin="10,7,0,0"
+            Width="102"
+            Margin="10,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#F8D347"
             Click="Button_Click_1"
             Content="Zaznacz wszystko"
-            Style="{DynamicResource ButtonStyle}" />
+            Style="{DynamicResource ButtonStyle}" Height="21" Grid.ColumnSpan="2" />
         <Button
-            Grid.Column="1"
-            Width="107"
-            Margin="27,7,0,0"
+            Width="102"
+            Margin="10,26,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#F8D347"
             Click="Button_Click_2"
             Content="Odznacz wszystko"
             RenderTransformOrigin="-2.96,-2.575"
-            Style="{DynamicResource ButtonStyle}" />
+            Style="{DynamicResource ButtonStyle}" Height="20" Grid.ColumnSpan="2" />
         <Label
             Grid.Column="1"
             Width="92"
@@ -94,7 +87,7 @@
             Width="120"
             Margin="279,33,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top" Grid.RowSpan="2" />
         <Label
             Grid.Column="1"
             Width="115"
@@ -108,7 +101,7 @@
             Width="120"
             Margin="404,33,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top" Grid.RowSpan="2" />
         <Label
             Grid.Column="1"
             Margin="540,7,0,0"
@@ -124,7 +117,48 @@
             VerticalAlignment="Top"
             DisplayMemberPath="Account_Name"
             ItemsSource="{Binding userAccounts}"
-            SelectedValuePath="Id" />
+            SelectedValuePath="Id" Grid.RowSpan="2" />
+        <DataGrid
+            x:Name="AccountsDatagrid"
+            Margin="22,0,565,44"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            SelectionChanged="CategoriesDatagrid_SelectionChanged" Grid.Column="1" Grid.RowSpan="2" Height="327" VerticalAlignment="Bottom">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+  
+                </Style>
+            </DataGrid.RowStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Account_Name}" Header="Nazwa" />
+
+                <DataGridCheckBoxColumn
+                    Binding="{Binding Account_Selected}"
+                    Header="Uzyj"
+                    IsThreeState="False" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button
+            Width="102"
+            Margin="22,5,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#F8D347"
+            Click="Button_Click_1"
+            Content="Zaznacz wszystko"
+            Style="{DynamicResource ButtonStyle}" Height="21" Grid.Column="1" />
+        <Button
+            Width="102"
+            Margin="22,26,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#F8D347"
+            Click="Button_Click_2"
+            Content="Odznacz wszystko"
+            RenderTransformOrigin="-2.96,-2.575"
+            Style="{DynamicResource ButtonStyle}" Height="20" Grid.Column="1" />
 
     </Grid>
 </Window>

@@ -175,6 +175,43 @@ namespace ProjectTabLib
             }
 
         }
+        public static List<RaportQueryModel> LoadRaportGenerationQuery(String dateOne, String dateTwo, int userId, int[] categories,int[] accounts)
+        {
+            /*            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+                        {
+                            var p = new
+                            {
+                                dateOne = dateOne,
+                                Id = userId,
+                                dateTwo = dateTwo,
+                                accounts = accounts,
+                                categories = categories
+                            };
+
+                    string sql = @"select Transactions.*, User_Categories.name as Category_Name, Accounts.name as Account_Name from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where  (Transactions.user_id = @Id AND datetime BETWEEN @dateOne and @dateTwo) AND Accounts.Id IN @accounts AND Transactions.category_id IN @categories";
+                    var output = cnn.Query<TransactionDatagridModel>(sql, p);
+                            return output.ToList();
+                        }
+            */
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var p = new
+                {
+                    dateOne = dateOne,
+                    Id = userId,
+                    dateTwo = dateTwo,
+                    accounts = accounts,
+                    categories = categories
+                };
+
+                string sql = @"select Accounts.name as AccName, User_Categories.name as Name,  SUM(Transactions.Transaction_Amount) as Amount, Transactions.Income as Income from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where  (Transactions.user_id = @Id AND datetime BETWEEN @dateOne and @dateTwo) AND Accounts.Id IN @accounts AND Transactions.category_id IN @categories GROUP BY User_Categories.name, Transactions.Income ORDER BY Income ASC, AccName,Name";
+                var output = cnn.Query<RaportQueryModel>(sql, p);
+                            return output.ToList();
+
+            }
+
+
+        }
 
 public static void addTransaction(Object newTransaction)
         {

@@ -89,7 +89,7 @@ namespace Project_TAB.Views
                     Id = editTrans.Id,
                     Category_Id = int.Parse(CategoriesComboBox.SelectedValue.ToString()),
                     Account_Id = account_Id,
-                    DateTime = TransactionDatePicker.SelectedDate.Value.ToShortDateString(),
+                    DateTime = TransactionDatePicker.SelectedDate.Value.ToString("yyyy-MM-dd"),
                     Name = NameInput.Text,
                     Transaction_Amount = transaction_Amount,
                     Income = income,
