@@ -15,7 +15,7 @@ h2 {
   margin-bottom: -12;
 }
 p {
-  color: #c7c7c7;
+  color: #a8a8a8;
 }
 div{
 width: 175px;
@@ -27,8 +27,5 @@ b{
   font-size: 15;
 }
 </style>
-<head>
-<link rel="stylesheet" href="index.css">
-</head>
 
 <body>

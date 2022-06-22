@@ -6,30 +6,30 @@
     xmlns:local="clr-namespace:Project_TAB.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="RaportWindow"
-    Width="800"
-    Height="450"
+    Width="486"
+    Height="458"
     Closing="Window_Closing"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid Background="#F2B413">
+    <Grid Background="#F2B413" Margin="0,0,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="54*"/>
-            <RowDefinition Height="365*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="95*" />
-            <ColumnDefinition Width="689*" />
-            <ColumnDefinition Width="8*" />
+            <ColumnDefinition Width="0*" />
+            <ColumnDefinition Width="98*" />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <DataGrid
             x:Name="CategoriesDatagrid"
-            Margin="10,48,672,44"
+            Margin="4,26,0,0"
             AutoGenerateColumns="False"
             CanUserAddRows="False"
-            SelectionChanged="CategoriesDatagrid_SelectionChanged" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            SelectionChanged="CategoriesDatagrid_SelectionChanged" HorizontalAlignment="Left" Width="161" Grid.Column="1" MinColumnWidth="20" MaxColumnWidth="140" Height="337" VerticalAlignment="Top" Grid.Row="1">
             <DataGrid.RowStyle>
                 <Style TargetType="{x:Type DataGridRow}">
-                    
+
                 </Style>
             </DataGrid.RowStyle>
 
@@ -46,87 +46,77 @@
         <Button
             Grid.Column="1"
             Width="102"
-            Margin="279,18,0,0"
+            Margin="350,105,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#F8D347"
             Click="Button_Click"
             Content="Generuj"
-            RenderTransformOrigin="-1.26,-1.725"
-            Style="{DynamicResource ButtonStyle}" Grid.Row="1" />
+            RenderTransformOrigin="0.49,0.45"
+            Style="{DynamicResource ButtonStyle}" Grid.Row="1" Height="20" />
         <Button
-            Width="102"
-            Margin="10,5,0,0"
+            Width="161"
+            Margin="4,368,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#F8D347"
             Click="Button_Click_1"
             Content="Zaznacz wszystko"
-            Style="{DynamicResource ButtonStyle}" Height="21" Grid.ColumnSpan="2" />
+            Style="{DynamicResource ButtonStyle}" Height="21" Grid.Row="1" Grid.Column="1" />
         <Button
-            Width="102"
-            Margin="10,26,0,0"
+            Width="161"
+            Margin="4,389,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#F8D347"
             Click="Button_Click_2"
             Content="Odznacz wszystko"
-            RenderTransformOrigin="-2.96,-2.575"
-            Style="{DynamicResource ButtonStyle}" Height="20" Grid.ColumnSpan="2" />
+            RenderTransformOrigin="0.499,0.433"
+            Style="{DynamicResource ButtonStyle}" Height="20" Grid.Row="1" Grid.Column="1" />
         <Label
             Grid.Column="1"
             Width="92"
             Height="28"
-            Margin="279,5,0,0"
+            Margin="342,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Początek&#xD;&#xA;" />
+            Content="Początek&#xD;&#xA;" RenderTransformOrigin="1.152,0.071" Grid.Row="1" />
         <DatePicker
             x:Name="datePicker1"
             Grid.Column="1"
             Width="120"
-            Margin="279,33,0,0"
+            Margin="342,26,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" Grid.RowSpan="2" />
+            VerticalAlignment="Top" Height="24" Grid.Row="1" />
         <Label
             Grid.Column="1"
             Width="115"
-            Margin="404,7,0,0"
+            Margin="342,50,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Koniec" />
+            Content="Koniec" Grid.Row="1" Height="26" />
         <DatePicker
             x:Name="datePicker2"
             Grid.Column="1"
             Width="120"
-            Margin="404,33,0,0"
+            Margin="342,76,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" Grid.RowSpan="2" />
+            VerticalAlignment="Top" Grid.Row="1" Height="24" />
         <Label
             Grid.Column="1"
-            Margin="540,7,0,0"
+            Margin="174,2,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Konto" />
-        <ComboBox
-            x:Name="Accounts_ComboBox"
-            Grid.Column="1"
-            Width="120"
-            Margin="540,35,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            DisplayMemberPath="Account_Name"
-            ItemsSource="{Binding userAccounts}"
-            SelectedValuePath="Id" Grid.RowSpan="2" />
+            Content="Konta" RenderTransformOrigin="-1,1.308" Height="26" Width="41" Grid.Row="1" />
         <DataGrid
             x:Name="AccountsDatagrid"
-            Margin="22,0,565,44"
+            Margin="170,26,0,0"
             AutoGenerateColumns="False"
             CanUserAddRows="False"
-            SelectionChanged="CategoriesDatagrid_SelectionChanged" Grid.Column="1" Grid.RowSpan="2" Height="327" VerticalAlignment="Bottom">
+            SelectionChanged="CategoriesDatagrid_SelectionChanged" Height="337" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="165" MinColumnWidth="20" MaxColumnWidth="140" Grid.Row="1">
             <DataGrid.RowStyle>
                 <Style TargetType="{x:Type DataGridRow}">
-  
+
                 </Style>
             </DataGrid.RowStyle>
 
@@ -141,24 +131,29 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button
-            Width="102"
-            Margin="22,5,0,0"
+            Width="159"
+            Margin="174,368,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#F8D347"
-            Click="Button_Click_1"
+            Click="Button_Click_3"
             Content="Zaznacz wszystko"
-            Style="{DynamicResource ButtonStyle}" Height="21" Grid.Column="1" />
+            Style="{DynamicResource ButtonStyle}" Height="21" Grid.Column="1" Grid.Row="1" />
         <Button
-            Width="102"
-            Margin="22,26,0,0"
+            Width="159"
+            Margin="174,389,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#F8D347"
-            Click="Button_Click_2"
+            Click="Button_Click_4"
             Content="Odznacz wszystko"
-            RenderTransformOrigin="-2.96,-2.575"
-            Style="{DynamicResource ButtonStyle}" Height="20" Grid.Column="1" />
+            RenderTransformOrigin="0.497,0.5"
+            Style="{DynamicResource ButtonStyle}" Height="20" Grid.Column="1" Grid.Row="1" />
+        <Label
+            Margin="4,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Kategorie" RenderTransformOrigin="0.5,0.462" Grid.Column="1" Height="26" Width="60" Grid.Row="1" />
 
     </Grid>
 </Window>

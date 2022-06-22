@@ -27,8 +27,7 @@ namespace Project_TAB.Views
     {
         public List<CategorySelectionRow> CategorySelection = new List<CategorySelectionRow>();
         public List<AccountSelectionRow> AccountSelection = new List<AccountSelectionRow>();
-        List<TransactionDatagridModel> transactions = new List<TransactionDatagridModel>();
-        List<UserAccountModel> Accounts = new List<UserAccountModel>();
+        //List<UserAccountModel> Accounts = new List<UserAccountModel>();
         public List<UserAccountModel> userAccounts { get; set; }
         List<UserCategoryModel> Categories = new List<UserCategoryModel>();
 
@@ -70,12 +69,8 @@ namespace Project_TAB.Views
             datePicker1.SelectedDate = DateTime.Now.AddDays(-28);
 
             DataContext = this;
-
-            Accounts_ComboBox.DataContext = this;
             userAccounts = SqliteDataAccess.getActiveUserAccounts(SqliteLogin.LoggedUserId);
             //userAccounts.Insert(0, new UserAccountModel { Account_Name = "Wszystkie", Balance = 0, Id = -1, Status = true, User_id = SqliteLogin.LoggedUserId });
-            Accounts_ComboBox.SelectedIndex = 0;
-
             RefreshTables();
         }
 
@@ -128,7 +123,7 @@ namespace Project_TAB.Views
             }
             if (AccountSelection.FirstOrDefault(n => n.Account_Selected == true) == null)
             {
-                MessageBox.Show("Wybierz jakąś kategorię");
+                MessageBox.Show("Wybierz jakieś konto");
                 return;
             }
 
@@ -164,95 +159,10 @@ namespace Project_TAB.Views
                 xd[v.AccName] = vv;
             }
 
-            RaportExport.generateRaport(srd.FileName ,Accounts_ComboBox.Text, datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"),
+            RaportExport.generateRaport(srd.FileName , datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"),
                         xd,
                         CategorySelection.Where(n =>n.Category_Selected==true).Select(n=>n.Category).ToList(),
                         AccountSelection.Where(n=>n.Account_Selected==true).Select(n => n.Account).ToList());
-
-
-            /*            var categories = 
-                           from cat in CategorySelection
-                           where cat.Category_Selected == true
-                           select cat.Category.Id;
-
-                        var accIds =
-                            from acc in AccountSelection
-                            where acc.Account_Selected == true
-                            select acc.Account.Id;
-                        Dictionary<int, (double,string)> test = new Dictionary<int, (double,string)>();
-                        Dictionary<string, RaportQueryModel> xd = new Dictionary<string, RaportQueryModel>();
-                        foreach (var v in accIds)
-                        {
-                            var output = SqliteDataAccess.LoadRaportGenerationQuery(datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"), SqliteLogin.LoggedUserId, categories.ToArray(), v);
-
-                                foreach (var b in output)
-                                {
-                                    xd[b.Income.ToString()[0] + b.AccName + b.Name] = b;
-                                }
-
-                            var asd = test[v];
-                            asd.Item1 = output.Sum(n => n.Amount);
-                           // asd.Item2 = v.Account.Account_Name;
-                        }
-                        //0 -rekord 1 - bilans 2 - label
-                        List<(string, double, int)> rows = new List<(string, double, int)>();
-
-                        foreach (var z in AccountSelection)
-                        {
-
-                            foreach (var x in CategorySelection)
-                            {
-                                if (!z.Account_Selected || !x.Category_Selected) continue;
-
-                            }
-                        }
-            */
-            /*            foreach (var v in output)
-                            xd[v.Income.ToString()[0]+ v.AccName + v.Name ] = v;
-            */
-            /*            RaportExport.generateRaport(Accounts_ComboBox.Text, datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"),
-                        bilans,
-                        xd.Values.ToArray(), srd.FileName);
-            */
-            /*            RaportExport.generateRaport(Accounts_ComboBox.Text, datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"),
-                        bilans,
-                        xd.Values.ToArray(), srd.FileName);
-            */
-
-            /*            var transakcje = 
-                           from trans in SqliteDataAccess.LoadTransactionsByDateToDateAndAccount(datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"), SqliteLogin.LoggedUserId, Accounts_ComboBox.Text)
-                           from c in categories
-                           where trans.Category_Id == c.Id
-                           select trans;
-                        catrow[] rows = new catrow[categories.Count()];
-                        Dictionary<string,(string,double,double)> xd = new Dictionary<string, (string, double, double)>();
-
-                        foreach (var v in categories) {
-                            xd[v.Id.ToString()] = (v.Category_Name,0,0);
-                        }
-                        double bilans=0;
-                        foreach (var v in transactions)
-                        {
-                            var xx = xd[v.Category_Id.ToString()];
-                            if (v.Income)
-                            {
-                                xx.Item2 += v.Transaction_Amount;
-                                bilans += v.Transaction_Amount;
-                            }
-                            else
-                            {
-                                xx.Item3 += v.Transaction_Amount;
-                                bilans -= v.Transaction_Amount;
-                            }
-                            xd[v.Category_Id.ToString()] = xx;
-                        }
-
-
-
-                        RaportExport.generateRaport(Accounts_ComboBox.Text, datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"),
-                          bilans, 
-                          xd.Values.ToArray(),srd.FileName);
-            */
         }
         private void GoBackToMainWindow()
         {
@@ -282,6 +192,25 @@ namespace Project_TAB.Views
             }
            
             CategoriesDatagrid.Items.Refresh();
+            //CategoriesDatagrid.ItemsSource = CategorySelection;
+        }
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            foreach (var v in AccountSelection) {
+                v.Account_Selected = true;
+            }
+            AccountsDatagrid.Items.Refresh();
+        }
+
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            foreach (var v in AccountSelection)
+            {
+                v.Account_Selected = false;
+            }
+
+            AccountsDatagrid.Items.Refresh();
             //CategoriesDatagrid.ItemsSource = CategorySelection;
         }
     }

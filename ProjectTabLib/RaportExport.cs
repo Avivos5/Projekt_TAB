@@ -73,13 +73,32 @@ namespace ProjectTabLib
 			File.WriteAllBytes(path, pdf);
 
 		}
-		public static void generateRaport(string path, string acc, string date1, string date2, Dictionary<string, (List<RaportQueryModel>, List<RaportQueryModel>, double)> records ,List<UserCategoryModel> categories, List<UserAccountModel> accounts)
+		public static void generateRaport(string path , string date1, string date2, Dictionary<string, (List<RaportQueryModel>, List<RaportQueryModel>, double)> records ,List<UserCategoryModel> categories, List<UserAccountModel> accounts)
 		{
-			var htmlh = File.ReadAllLines("htmlh.txt");//ten szajs trzeba wywalic
-			var htmlm = File.ReadAllLines("htmlm.txt");
-			string htmle = "</body></html >";
+
+			var xd1 = "<!DOCTYPE html>"+
+			"<html>" +
+			"<style>" +
+			"			h2 {" +
+			"				text - align: left;\n" +
+			"				margin - bottom: -12;\n" +
+			"			}\n" +
+			"			p {\n" +
+			"				color: #a0a0a0;\n" +
+			"}\n" +
+			"			div{\n" +
+			"width: 175px;\n" +
+			"			}\n" +
+			"			b{\n" +
+			"				font - size: 30;\n" +
+			"			}\n" +
+			".xd{\n" +
+			"				font - size: 15;\n" +
+			"			}\n" +
+			"</style>\n" +
+			"<body>\n";
 			StringBuilder html = new StringBuilder();
-			html.Append(String.Concat(htmlh));
+			html.Append(String.Concat(xd1));
 			html.Append("<h1>RAPORT</h1>");
 			html.Append("<h2>Zyski i wydatki</h2>");
 			html.Append("<p>od " + date1 + " do " + date2 + "</p>");
@@ -106,12 +125,11 @@ namespace ProjectTabLib
 					html.Append("<hr size=\"\" width=\"\" color=\"\">");
 				}
 			}
-
-			//html.Append(String.Concat(htmlm));
-			html.Append(htmle);
+			html.Append("</body></html >");
 
 			var pdf = Pdf
 			.From(html.ToString())
+			.EncodedWith("utf-8")
 			.OfSize(PaperSize.A4)
 			.WithTitle("Raport " + "od " + date1 + " do " + date2)
 			.WithoutOutline()
