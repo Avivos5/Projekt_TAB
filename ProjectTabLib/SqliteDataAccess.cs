@@ -204,7 +204,7 @@ namespace ProjectTabLib
                     categories = categories
                 };
 
-                string sql = @"select Accounts.name as AccName, User_Categories.name as Name,  SUM(Transactions.Transaction_Amount) as Amount, Transactions.Income as Income from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where  (Transactions.user_id = @Id AND datetime BETWEEN @dateOne and @dateTwo) AND Accounts.Id IN @accounts AND Transactions.category_id IN @categories GROUP BY User_Categories.name, Transactions.Income ORDER BY Income ASC, AccName,Name";
+                string sql = @"select Accounts.name as AccName, User_Categories.name as Name,  SUM(Transactions.Transaction_Amount) as Amount, Transactions.Income as Income from Transactions  LEFT JOIN User_Categories ON Transactions.user_id = User_Categories.user_id and Transactions.category_id = User_Categories.id LEFT JOIN Accounts ON Transactions.user_id = Accounts.user_id and Transactions.account_id = Accounts.id where  (Transactions.user_id = @Id AND datetime BETWEEN @dateOne and @dateTwo) AND Accounts.Id IN @accounts AND Transactions.category_id IN @categories GROUP BY Accounts.name, User_Categories.name, Transactions.Income ORDER BY Income ASC, AccName,Name";
                 var output = cnn.Query<RaportQueryModel>(sql, p);
                             return output.ToList();
 

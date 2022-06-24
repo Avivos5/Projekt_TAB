@@ -140,7 +140,9 @@ namespace Project_TAB.Views
             if (srd == null) return;
 
             var output = SqliteDataAccess.LoadRaportGenerationQuery(datePicker1.SelectedDate.Value.ToString("yyyy-MM-dd"), datePicker2.SelectedDate.Value.ToString("yyyy-MM-dd"), SqliteLogin.LoggedUserId, categories.ToArray(), accIds.ToArray());
+
             Dictionary<string, (List<RaportQueryModel>, List<RaportQueryModel>,double)> xd = new Dictionary<string, (List<RaportQueryModel>, List<RaportQueryModel>,double)>();
+
             foreach (var v in AccountSelection.Where(n => n.Account_Selected == true)) {
                 xd[v.Account.Account_Name] = (new List<RaportQueryModel>(), new List<RaportQueryModel>(), 0);
             }
